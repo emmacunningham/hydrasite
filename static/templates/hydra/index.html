@@ -41,14 +41,14 @@
 	<header id="header">
 		<div class="container">
 			<div class="row">
-				<div class="twocol">
-					<img src="/hydramedia/img/feedback.jpg" style="width:20%;">
+				<div class="twocol" style="margin-right:50px;">
+					<img src="/hydramedia/img/logo.png" style="width:100%;" id="logo">
 				</div>
-				<div class="twocol">
-					<div class="verticalline"><a class="aboutactivator" id="aboutactivator">about</a></div>
+				<div class="twocol" style="padding-top:20px;">
+				<div class="verticalline"><p class="nav"><a class="aboutactivator" id="aboutactivator"><strong>ABOUT US/</strong></p><p class="nav">WHAT WE DO</a></p></div>
 				</div>
-				<div class="twocol">
-					<div class="verticalline"><a class="newsletteractivator" id="newsletteractivator">newsletter</a></div>
+				<div class="twocol" style="padding-top:20px;">
+				<div class="verticalline"><p class="nav"><a class="newsletteractivator" id="newsletteractivator"><strong>NEWSLETTER/</strong></p><p class="nav">SIGN UP</a></p></div>
 				</div>
 			</div>
 		</div>
@@ -85,25 +85,24 @@
 		</div>
 		<div class="newsletterbox" id="newsletterbox">
 			<div class="container">
-				<div class="row">					
-					<div class="fourcol">						
+				<div class="row">
+					<div class="onecol">
+
+					</div>					
+					<div class="fourcol" style="margin-top:20px; margin-left:50px;">						
+						<p class="nav"><strong>NEWSLETTER/ SIGN UP FOR UPDATES</strong></p>
 						<p>
-							<form name="myForm" action="" onsubmit="return validateEmail()" method="post">
-							<input type="text" name="fname" value="YOUR NAME" style="background:#000000; color:#ffffff; border:0px;">
+							<form name="myForm" action="" method="post" onsubmit="return validateEmail()">{% csrf_token %}
+							{{ form.firstname }}
 						</p>
 					</div>
-					<div class="fourcol">
+					<div class="fourcol" style="margin-top:27px; margin-left:50px;">
 						<p>
-							<input type="text" name="email" value="YOUR EMAIL" style="background:#000000; color:#ffffff; border:0px;">
+							{{ form.email }}
 						</p>
 					</div>
-					<div class="twocol">
-						<p>
-							<div class="custombutton">
-							<input type="submit" value=" " style="border:0px;">
-							</div>
-							</form>
-						</p>
+					<div class="onecol" style="margin-left:50px;">
+							<button class="signup" type="submit">SIGN UP</button>
 					</div>
 					<div class="twocol" style="align:right; float:right;">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
@@ -111,6 +110,24 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- thanks overlay -->
+		{% if thanks %}
+			<div class="thanksoverlay" id="thanksoverlay">
+			</div>
+			<div class="thanksbox" id="thanksbox">
+				<div class="container">
+					<div class="row">
+						<div class="tencol">
+							Thanks for signing up!
+						</div>
+						<div class="twocol" style="align:right; float:right;">
+							<a class="thanksclose" id="thanksclose"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
 
 
 	</div>
@@ -119,14 +136,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="ninecol">
-					<p id="footertext">HYDRA. | &copy; 2012 Hydra. All Rights Reserved.</p>
+					<p id="footertext"><strong>HYDRA.</strong> | &copy; 2012 Hydra. All Rights Reserved.</p>
 				</div>
 				<div class="onecol" style="text-align:left;">
-					<p class="verticalline" id="footertext">EMAIL<br>INFO@HYDRA.COM
+					<p class="footerverticalline" id="footertext">EMAIL<br><strong>INFO@HYDRA.COM</strong>
 					</p>
 				</div>
 				<div class="onecol" style="text-align:left; float:right; margin-right:80px;">
-					<p class="verticalline" id="footertext">PHONE<br>800-123-4567
+					<p class="footerverticalline" id="footertext">PHONE<br><strong>800-123-4567</strong>
 					</p>
 				</div>
 				<div class="ninecol">
@@ -170,12 +187,12 @@
 
 	});
 	</script>
-
+	
 	<script type="text/javascript">
 	$(function() {
 		$('#newsletteractivator').click(function(){
 			$('#newsletteroverlay').fadeIn('fast',function(){
-				$('#newsletterbox').animate({'top':'0px'},500);
+				$('#newsletterbox').animate({'top':'0px'},200);
 			});
 		});
 		$('#newsletterboxclose').click(function(){
@@ -186,6 +203,23 @@
 
 	});
 	</script>
+	
+	<script type="text/javascript">
+	$(function() {
+		$('#logo').load(function(){
+			$('#thanksoverlay').fadeIn('fast',function(){
+				$('#thanksbox').animate({'top':'0px'},0);
+			});
+		});
+		$('#thanksclose').click(function(){
+			$('#thanksbox').animate({'top':'-200%'},0,function(){
+				$('#thanksoverlay').fadeOut('fast');
+			});
+		});
+
+	});
+	</script>
+	
 	
 	<script>
 	function validateEmail()
@@ -200,7 +234,5 @@
 	  }
 	}
 	</script>
-
-
 </body>
 </html>

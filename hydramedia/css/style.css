@@ -38,9 +38,10 @@ body {
 		margin: 0; 
 		font-size: 8pt; 
 		line-height: 1.0;
-		font-family: Monaco, Consolas, "Lucida Console", monospace;
+		font-family: font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-align:center;
-		background: url('../img/bg.jpg') repeat center;
+		background: url('../img/bg.png') no-repeat top left;
+		width:100%;
 }
 
 /*
@@ -57,9 +58,9 @@ body {
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: none; }
+a:visited { color: none; }
+a:hover { color: none; }
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
@@ -224,16 +225,9 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    all that extra fun custom stuff
    ========================================================================== */
-.custombutton{
-	background: url(../img/black.jpg);
-}
 
-.custominput{
-	
-}
 .aboutoverlay{
-   	opacity: 0.3;	
- 	background:transparent url(../img/lucier.jpg) repeat top left;
+ 	background:transparent url(../img/overlay.png) repeat top left;
     position:fixed;
     top:0px;
     bottom:0px;
@@ -254,13 +248,15 @@ td { vertical-align: top; }
 }
 
 a.boxclose{
-	position:absolute;
-    width:26px;
-    height:26px;
-    background:transparent url(../img/cancel.jpg) repeat top right;
-    margin-top: 2%;
-    margin-right: 40px;
+	position:relative;
+	padding-top:50px;
+    width:100px;
+    height:100px;
+    background:transparent url(../img/close.png) no-repeat top right;
     cursor:pointer;
+    z-index:102;
+	margin-top:40px;
+	float:right;
 
 }
 
@@ -310,12 +306,12 @@ a.newsletteractivator{
 
 a.newsletterboxclose{
 	position:fixed;
-    width:26px;
-    height:26px;
-    background:transparent url(../img/cancel.jpg) repeat top right;
+	margin-top:20px;
+    width:100px;
+    height:100px;
+    background:transparent url(../img/close.png) no-repeat top right;
     cursor:pointer;
     z-index:102;
-
 }
 
 
@@ -324,7 +320,7 @@ a.newsletterboxclose{
    	left:0px;
    	bottom:0px;
    	width:100%;
-	height:50px;
+	height:70px;
  	background:#000000;
 	text-align:left;
 	color:#ffffff;
@@ -345,8 +341,77 @@ a.newsletterboxclose{
 }
 
 .verticalline {
-	border-left:thin solid #cfcfcf;
+	border-left:thin solid #484848;
 	padding-left:20px;
+	padding-top:20px;
+	padding-bottom:10px;
+	height:100%;
+	text-align:left;
+	line-height:1.0;
+	color:#000000;
+}
+
+.footerverticalline {
+	border-left:thin solid #666666;
+	padding-left:20px;
+	padding-top:10px;
+	padding-bottom:10px;
+	height:20px;
+	text-align:left;
+}
+
+p.nav {
+	line-height:.6;
+}
+
+.logo {
+	background: url(../img/logo.png);
+	width: 100%;
+	height: 100%;
+}
+
+.signup {
+	width:80px;
+	height:80px;
+	border:none;
+	background: transparent url(../img/signup.png) no-repeat center;
+	float:left;
+	color:#FFFFFF;
+}
+
+.thanksoverlay{
+ 	background: transparent;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+	width:100%;
+    z-index:100;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.thanksbox{
+    position:fixed;
+    top:-200%;
+	width:100%;
+    background: url(../img/black.jpg) repeat top left;
+    color:#ffffff;
+	padding-bottom:80px;
+	padding-top:50px;
+    z-index:101;
+}
+
+a.thanksclose{
+	position:fixed;
+	margin-top:10px;
+    width:100px;
+    height:100px;
+    background:transparent url(../img/close.png) no-repeat top right;
+    cursor:pointer;
+    z-index:200;
+
 }
 
 
