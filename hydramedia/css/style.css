@@ -38,7 +38,7 @@ body {
 		margin: 0; 
 		font-size: 8pt; 
 		line-height: 1.0;
-		font-family: font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: "ff-dagny-web-pro",sans-serif;
 		text-align:center;
 		background: url('../img/bg.png') no-repeat top left;
 		width:100%;
@@ -58,10 +58,10 @@ body {
    Links
    ========================================================================== */
 
-a { color: none; }
+a { color: #9e9e9e; text-decoration:none}
 a:visited { color: none; }
 a:hover { color: none; }
-a:focus { outline: thin dotted; }
+a:focus { outline: none; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active { outline: 0; }
@@ -236,15 +236,20 @@ td { vertical-align: top; }
     z-index:100;
 }
 
+h1{
+	font-size:80pt;
+}
+
 .aboutbox{
     position:fixed;
     top:-200%;
-    left:30%;
-    right:30%;
-    background:transparent;
+    left:10%;	
+	right:10%;
+	background:transparent;
     color:#ffffff;
     padding:20px;
     z-index:101;
+	float:left;
 }
 
 a.boxclose{
@@ -264,6 +269,7 @@ a.aboutactivator{
 	position:relative;
 	margin-left:10px;
 	font-size:10pt;
+	color:#000000;
 	bottom:10px;
 	left:0px;
 	z-index:1;
@@ -287,7 +293,7 @@ a.aboutactivator{
     position:fixed;
     top:-200%;
 	width:100%;
-    background: url(../img/black.jpg) repeat top left;
+    background: #000000;
     color:#ffffff;
 	padding-bottom:50px;
 	padding-top:50px;
@@ -298,6 +304,7 @@ a.newsletteractivator{
 	position:relative;
 	margin-left:10px;
 	font-size:10pt;
+	color:#000000;
 	bottom:10px;
 	left:0px;
 	z-index:1;
@@ -358,10 +365,12 @@ a.newsletterboxclose{
 	padding-bottom:10px;
 	height:20px;
 	text-align:left;
+	color:#505050;
 }
 
 p.nav {
-	line-height:.6;
+	line-height:1.0;
+	font-size:14pt;
 }
 
 .logo {
@@ -379,7 +388,7 @@ p.nav {
 	color:#FFFFFF;
 }
 
-.thanksoverlay{
+.thanksoverlay {
  	background: transparent;
     position:fixed;
     top:0px;
@@ -392,7 +401,7 @@ p.nav {
 	margin-left:auto;
 }
 
-.thanksbox{
+.thanksbox {
     position:fixed;
     top:-200%;
 	width:100%;
@@ -403,7 +412,7 @@ p.nav {
     z-index:101;
 }
 
-a.thanksclose{
+a.thanksclose {
 	position:fixed;
 	margin-top:10px;
     width:100px;
@@ -414,6 +423,26 @@ a.thanksclose{
 
 }
 
+.newsletterform {
+	background:#000000;
+	font-size:80px;
+}
+
+.lightgrey {
+	color:#9e9e9e;
+}
+
+.darkgrey {
+	color:#505050;
+}
+
+input.signupinput {
+	color:#ffffff;
+	background:#000000;
+	border:none;
+	font-size:24pt;
+	font-weight:bold;
+}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
@@ -462,7 +491,7 @@ a.thanksclose{
 
 @media print {
   * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
+  a, a:visited { text-decoration: none; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */

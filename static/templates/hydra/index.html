@@ -33,6 +33,11 @@
 	Modernizr enables HTML5 elements & feature detects for optimal performance.
 	Create your own custom Modernizr build: www.modernizr.com/download/ -->
 	<script src="/hydramedia/js/libs/modernizr-2.5.3.min.js"></script>
+	
+	<!-- TypeKit script -->
+	<script type="text/javascript" src="http://use.typekit.com/kcq7fyc.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
 </head>
 <body>
 	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -73,11 +78,17 @@
 			</div>
 		</div>
 		<div class="aboutbox" id="aboutbox">
-			<h1>WHAT WE DO.</h1>
-			<p>
-				Here comes a very important message for your user.
-				Turn this window off by clicking the cross.
-			</p>
+			<h1><strong>WHAT WE DO.</strong></h1>
+			<div class="container">
+				<div class="row" style="text-align:left;margin-right:auto;margin-left:auto;">
+					<div class="fivecol" style="margin-left:15%;margin-right:5%;">
+						Lorem ipsum stuff about us hey hey hey.
+					</div>
+					<div class="fivecol">
+						Sitting in a room different from the one you are in now.
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- newsletter overlay -->
@@ -89,22 +100,22 @@
 					<div class="onecol">
 
 					</div>					
-					<div class="fourcol" style="margin-top:20px; margin-left:50px;">						
-						<p class="nav"><strong>NEWSLETTER/ SIGN UP FOR UPDATES</strong></p>
+					<div class="fourcol" style="margin-top:10px; margin-left:80px;">						
+						<p class="nav" style="float:left;"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
 						<p>
 							<form name="myForm" action="" method="post" onsubmit="return validateEmail()">{% csrf_token %}
-							{{ form.firstname }}
+							<input class="signupinput" size="15%" style="float:left;" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
 						</p>
 					</div>
-					<div class="fourcol" style="margin-top:27px; margin-left:50px;">
+					<div class="fourcol" style="margin-top:30px; margin-left:50px;">
 						<p>
-							{{ form.email }}
+							<input class="signupinput" size="15%" type="text" name="email" id="id_email" value="YOUR EMAIL" />
 						</p>
 					</div>
-					<div class="onecol" style="margin-left:50px;">
+					<div class="onecol" style="margin-left:50px;margin-top:10px;">
 							<button class="signup" type="submit">SIGN UP</button>
 					</div>
-					<div class="twocol" style="align:right; float:right;">
+					<div class="twocol" style="align:right; float:right;margin-top:10px;">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
 					</div>
 				</div>
@@ -136,14 +147,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="ninecol">
-					<p id="footertext"><strong>HYDRA.</strong> | &copy; 2012 Hydra. All Rights Reserved.</p>
+					<p class="darkgrey" id="footertext" style="margin-bottom:2%;"><strong style="color:#ffffff;">HYDRA.</strong> | &copy; 2012 Hydra. All Rights Reserved.</p>
 				</div>
 				<div class="onecol" style="text-align:left;">
-					<p class="footerverticalline" id="footertext">EMAIL<br><strong>INFO@HYDRA.COM</strong>
+					<p class="footerverticalline" id="footertext">EMAIL<br><strong class="lightgrey"><a href="mailto:info@hydra.com">INFO@HYDRA.COM</a></strong>
 					</p>
 				</div>
 				<div class="onecol" style="text-align:left; float:right; margin-right:80px;">
-					<p class="footerverticalline" id="footertext">PHONE<br><strong>800-123-4567</strong>
+					<p class="footerverticalline" id="footertext">PHONE<br><strong class="lightgrey">800-123-4567</strong>
 					</p>
 				</div>
 				<div class="ninecol">

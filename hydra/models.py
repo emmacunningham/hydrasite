@@ -12,3 +12,7 @@ class NewsletterSignup(models.Model):
 class NewsletterForm(ModelForm):
 	class Meta:
 		model = NewsletterSignup
+		
+		def __init__(self, *args, **kwargs):
+		        super(NewsletterForm, self).__init__(*args, **kwargs)
+		        self.fields['myfield'].widget.attrs.update({'size' : '80'})
