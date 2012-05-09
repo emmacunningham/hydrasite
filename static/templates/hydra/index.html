@@ -49,11 +49,11 @@
 				<div class="twocol" style="margin-right:50px;">
 					<img src="/hydramedia/img/logo.png" style="width:100%;" id="logo">
 				</div>
-				<div class="twocol" style="padding-top:20px;">
-				<div class="verticalline"><p class="nav"><a class="aboutactivator" id="aboutactivator"><strong>ABOUT US/</strong></p><p class="nav">WHAT WE DO</a></p></div>
+				<div class="twocol" style="padding-top:10px;">
+				<div class="verticalline"><a class="aboutactivator" id="aboutactivator"><p class="nav"><strong>ABOUT US/</strong><br>WHAT WE DO</p></a></div>
 				</div>
-				<div class="twocol" style="padding-top:20px;">
-				<div class="verticalline"><p class="nav"><a class="newsletteractivator" id="newsletteractivator"><strong>NEWSLETTER/</strong></p><p class="nav">SIGN UP</a></p></div>
+				<div class="twocol" style="padding-top:10px;">
+				<div class="verticalline"><a class="newsletteractivator" id="newsletteractivator"><p class="nav"><strong>NEWSLETTER/</strong><br>SIGN UP</p></a></div>
 				</div>
 			</div>
 		</div>
@@ -204,6 +204,7 @@
 		$('#newsletteractivator').click(function(){
 			$('#newsletteroverlay').fadeIn('fast',function(){
 				$('#newsletterbox').animate({'top':'0px'},200);
+				$('#id_firstname').focus();
 			});
 		});
 		$('#newsletterboxclose').click(function(){
@@ -217,7 +218,7 @@
 	
 	<script type="text/javascript">
 	$(function() {
-		$('#logo').load(function(){
+		$(document).ready(function(){
 			$('#thanksoverlay').fadeIn('fast',function(){
 				$('#thanksbox').animate({'top':'0px'},0);
 			});
@@ -231,6 +232,29 @@
 	});
 	</script>
 	
+	<script type="text/javascript">
+	$(function() {
+		$(document).ready(function(){
+			$('#thanksoverlay').fadeIn('fast',function(){
+				$('#thanksbox').animate({'top':'0px'},0);
+			});
+		});
+		$('#thanksclose').click(function(){
+			$('#thanksbox').animate({'top':'-200%'},0,function(){
+				$('#thanksoverlay').fadeOut('fast');
+			});
+		});
+
+	});
+	</script>
+	
+	<script type="text/javascript">
+	$(function() {
+	    $('input[type=text]').click(function() {
+	      $(this).val('');
+	      });
+	 });
+	</script>
 	
 	<script>
 	function validateEmail()
@@ -240,8 +264,8 @@
 	var dotpos=x.lastIndexOf(".");
 	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
 	  {
-	  alert("Not a valid e-mail address");
-	  return false;
+		$('#id_email').css("border","1px solid red");
+		return false;
 	  }
 	}
 	</script>

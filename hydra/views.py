@@ -22,6 +22,7 @@ def index(request):
 			return render_to_response('hydra/index.html', {
 				'form': form, 'thanks': thanks
 				},context_instance=RequestContext(request))
+
 	else:
 		form = NewsletterForm() # An unbound form
 

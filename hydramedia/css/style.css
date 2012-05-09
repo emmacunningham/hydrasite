@@ -270,7 +270,7 @@ a.aboutactivator{
 	margin-left:10px;
 	font-size:10pt;
 	color:#000000;
-	bottom:10px;
+	bottom:0px;
 	left:0px;
 	z-index:1;
 	cursor:pointer;
@@ -305,7 +305,7 @@ a.newsletteractivator{
 	margin-left:10px;
 	font-size:10pt;
 	color:#000000;
-	bottom:10px;
+	bottom:0px;
 	left:0px;
 	z-index:1;
 	cursor:pointer;
@@ -350,8 +350,7 @@ a.newsletterboxclose{
 .verticalline {
 	border-left:thin solid #484848;
 	padding-left:20px;
-	padding-top:20px;
-	padding-bottom:10px;
+	padding-bottom:0px;
 	height:100%;
 	text-align:left;
 	line-height:1.0;
@@ -443,6 +442,10 @@ input.signupinput {
 	border:none;
 	font-size:24pt;
 	font-weight:bold;
+}
+
+.emailError {
+	border:red;
 }
 
 /* ==|== media queries ======================================================
