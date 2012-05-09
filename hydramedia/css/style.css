@@ -370,7 +370,7 @@ a.newsletterboxclose{
 
 p.nav {
 	line-height:1.0;
-	font-size:14pt;
+	font-size:10pt;
 }
 
 .logo {
@@ -407,6 +407,7 @@ p.nav {
 	width:100%;
     background: url(../img/black.jpg) repeat top left;
     color:#ffffff;
+	font-size:24pt;
 	padding-bottom:80px;
 	padding-top:50px;
     z-index:101;
