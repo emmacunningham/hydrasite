@@ -96,26 +96,21 @@
 		</div>
 		<div class="newsletterbox" id="newsletterbox">
 			<div class="container">
-				<div class="row">
-					<div class="onecol">
-
-					</div>					
-					<div class="fourcol" style="margin-top:10px; margin-left:80px;">						
-						<p class="nav" style="float:left;"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
-						<p>
+				<div class="row" style="margin-left:20px;">
+							
+					<div class="fourcol" style="margin-top:10px;">
+							<p class="nav" style="float:auto;"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
 							<form name="myForm" action="" method="post" onsubmit="return validateEmail()">{% csrf_token %}
-							<input class="signupinput" size="15%" style="float:left;" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
-						</p>
+							<p><input class="signupinput" style="float:left;position:relative;" size="15%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" /></p>
 					</div>
-					<div class="fourcol" style="margin-top:30px; margin-left:50px;">
-						<p>
-							<input class="signupinput" size="15%" type="text" name="email" id="id_email" value="YOUR EMAIL" />
-						</p>
+					<div class="fourcol" style="margin-top:10px;">
+							<p></p><br>
+							<p><input class="signupinput" size="15%" type="text" name="email" id="id_email" value="YOUR EMAIL" /></p>
 					</div>
-					<div class="onecol" style="margin-left:50px;margin-top:10px;">
+					<div class="onecol" style="margin-left:50px;">
 							<button class="signup" type="submit">SIGN UP</button>
 					</div>
-					<div class="twocol" style="align:right; float:right;margin-top:10px;">
+					<div class="twocol" style="align:right; float:right;">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
 					</div>
 				</div>
