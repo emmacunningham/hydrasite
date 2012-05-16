@@ -90,10 +90,10 @@ img {
 
 /* Smaller screens */
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1280px) {
 
 	body {
-	font-size: 0.3em;
+	font-size: 8pt;
 	}
 	
 	}
@@ -104,7 +104,7 @@ img {
 @media handheld, only screen and (max-width: 767px) {
 
 	body {
-	font-size: 0.3rem;
+	font-size: 0.3em;
 	-webkit-text-size-adjust: none;
 	}
 	

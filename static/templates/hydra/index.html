@@ -47,13 +47,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="twocol" style="margin-right:50px;">
-					<img src="/hydramedia/img/logo.png" style="width:100%;" id="logo">
+					<img src="/hydramedia/img/logo.png" id="logo">
 				</div>
-				<div class="twocol" style="padding-top:10px;">
-				<div class="verticalline"><a class="aboutactivator" id="aboutactivator"><p class="nav"><strong>ABOUT US/</strong><br>WHAT WE DO</p></a></div>
+				<div class="twocol">
+				<div class="verticalline"><a class="aboutactivator" id="aboutactivator"><p class="topnav"><strong>ABOUT US/</strong><br>WHAT WE DO</p></a></div>
 				</div>
-				<div class="twocol" style="padding-top:10px;">
-				<div class="verticalline"><a class="newsletteractivator" id="newsletteractivator"><p class="nav"><strong>NEWSLETTER/</strong><br>SIGN UP</p></a></div>
+				<div class="twocol">
+				<div class="verticalline"><a class="newsletteractivator" id="newsletteractivator"><p class="topnav"><strong>NEWSLETTER/</strong><br>SIGN UP</p></a></div>
 				</div>
 			</div>
 		</div>
@@ -64,7 +64,7 @@
 
 	<div role="main">
 
-
+		
 		<!-- about overlay -->
 		<div class="aboutoverlay" id="aboutoverlay" style="display:none;">
 			<div class="container">
@@ -78,15 +78,17 @@
 			</div>
 		</div>
 		<div class="aboutbox" id="aboutbox">
-			<h1><strong>WHAT WE DO.</strong></h1>
+			<h1 style="text-align:center;margin-right:auto;margin-left:auto;"><strong>{{ abouthead }}</strong></h1>
 			<div class="container">
-				<div class="row" style="text-align:left;margin-right:auto;margin-left:auto;">
-					<div class="fivecol" style="margin-left:15%;margin-right:5%;">
-						Lorem ipsum stuff about us hey hey hey.
+				<div class="row" style="float:auto;text-align:justify;margin-right:auto;margin-left:auto;">
+
+					<div class="threecol" style="float:none;text-align:justify;position:fixed;left:30%;">
+						{{ aboutleft }}
 					</div>
-					<div class="fivecol">
-						Sitting in a room different from the one you are in now.
+					<div class="threecol" style="float:none;text-align:justify;position:fixed;right:30%;">
+						{{ aboutright }}
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -99,7 +101,7 @@
 				<div class="row" style="margin-left:20px;">
 							
 					<div class="fourcol" style="margin-top:10px;">
-							<p class="nav" style="float:auto;"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
+							<p class="topnav" style="float:auto;"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
 							<form name="myForm" action="" method="post" onsubmit="return validateEmail()">{% csrf_token %}
 							<p><input class="signupinput" style="float:left;position:relative;" size="15%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" /></p>
 					</div>
@@ -108,7 +110,7 @@
 							<p><input class="signupinput" size="15%" type="text" name="email" id="id_email" value="YOUR EMAIL" /></p>
 					</div>
 					<div class="onecol" style="margin-left:50px;">
-							<button class="signup" type="submit">SIGN UP</button>
+							<button class="signup" type="submit" id="signup">SIGN UP</button>
 					</div>
 					<div class="twocol" style="align:right; float:right;">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
@@ -135,6 +137,8 @@
 			</div>
 		{% endif %}
 
+		<!-- html5 background video -->
+		<video id="bg_video" src="/hydramedia/img/bg.mp4" autoplay="true" loop="true">
 
 	</div>
 
@@ -229,7 +233,7 @@
 	
 	<script type="text/javascript">
 	$(function() {
-		$(document).ready(function(){
+		$('#signup').click(function(){
 			$('#thanksoverlay').fadeIn('fast',function(){
 				$('#thanksbox').animate({'top':'0px'},0);
 			});
@@ -264,5 +268,8 @@
 	  }
 	}
 	</script>
+	
+
+	
 </body>
 </html>

@@ -36,11 +36,10 @@ html, select, textarea { font-family: sans-serif; color: #222; }
 
 body {
 		margin: 0; 
-		font-size: .8rem; 
+		font-size: .8em; 
 		line-height: 1.0;
 		font-family: "ff-dagny-web-pro",sans-serif;
 		text-align:center;
-		background: url('../img/bg.png') no-repeat top left;
 		width:100%;
 }
 
@@ -268,11 +267,10 @@ a.boxclose{
 a.aboutactivator{
 	position:relative;
 	margin-left:10px;
-	font-size:.8rem;
+	font-size:.8em;
 	color:#000000;
 	bottom:0px;
 	left:0px;
-	z-index:1;
 	cursor:pointer;
 }
 
@@ -303,7 +301,7 @@ a.aboutactivator{
 a.newsletteractivator{
 	position:relative;
 	margin-left:10px;
-	font-size:.8rem;
+	font-size:.8em;
 	color:#000000;
 	bottom:0px;
 	left:0px;
@@ -341,20 +339,22 @@ a.newsletterboxclose{
 }
 
 #header {
+	position:relative;
    	margin-bottom:10px;
 	margin-top:3%;
-	font-size:20px;
 	text-align:left;
+	z-index:10;
+
 }
 
 .verticalline {
 	border-left:thin solid #484848;
 	padding-left:20px;
-	padding-bottom:0px;
-	height:100%;
+	margin-top:10px;
 	text-align:left;
 	line-height:1.0;
 	color:#000000;
+
 }
 
 .footerverticalline {
@@ -367,7 +367,7 @@ a.newsletterboxclose{
 	color:#505050;
 }
 
-p.nav {
+p.topnav {
 	line-height:1.0;
 	font-size:10pt;
 	text-align:left;
@@ -405,7 +405,7 @@ p.nav {
     position:fixed;
     top:-200%;
 	width:100%;
-    background: url(../img/black.jpg) repeat top left;
+    background: url(../img/black.jpg) repeat top right;
     color:#ffffff;
 	font-size:24pt;
 	padding-bottom:80px;
@@ -448,6 +448,15 @@ input.signupinput {
 
 .emailError {
 	border:red;
+}
+
+#bg_video {
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+	height:100%;
 }
 
 /* ==|== media queries ======================================================
