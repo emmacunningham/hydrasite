@@ -226,7 +226,7 @@ td { vertical-align: top; }
    ========================================================================== */
 
 .aboutoverlay{
- 	background:transparent url(../img/overlay.png) repeat top left;
+ 	background:transparent url(../img/overlay_small.png) repeat top left;
     position:fixed;
     top:0px;
     bottom:0px;
