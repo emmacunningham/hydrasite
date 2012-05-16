@@ -16,20 +16,18 @@ def index(request):
 	abouthead = aboutcopy.about_title
 	aboutleft = aboutcopy.about_text_left
 	aboutright = aboutcopy.about_text_right
+	post = request.POST.copy()
 	if request.method == 'POST': 
-		form = NewsletterForm(request.POST) 
-		if form.is_valid(): 
-			firstname = form.cleaned_data['firstname']
-			email = form.cleaned_data['email']
+		form = NewsletterForm(post) 
+		if post: 
+			firstname = post['name']
+			email = post['email']
 			signup = NewsletterSignup()
 			signup.email = email
 			signup.firstname = firstname
 			signup.save()
-			#status = simplejson.dumps({'status': "success"})
-			#return HttpResponse(status, mimetype="application/json")
-			return render_to_response('hydra/index.html', {
-				'form': form, 'thanks': thanks
-				},context_instance=RequestContext(request))
+			status = simplejson.dumps({'status': "success"})
+			return HttpResponse(status, mimetype="application/json")
 
 	else:
 		form = NewsletterForm() # An unbound form

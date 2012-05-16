@@ -405,7 +405,7 @@ p.topnav {
     position:fixed;
     top:-200%;
 	width:100%;
-    background: url(../img/black.jpg) repeat top right;
+    background: #000000;
     color:#ffffff;
 	font-size:24pt;
 	padding-bottom:80px;

@@ -102,7 +102,7 @@
 							
 					<div class="fourcol" style="margin-top:10px;">
 							<p class="topnav" style="float:auto;"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
-							<form name="myForm" action="" method="post" onsubmit="return validateEmail()">{% csrf_token %}
+							<form name="myForm" action="" onsubmit="return validateEmail()">
 							<p><input class="signupinput" style="float:left;position:relative;" size="15%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" /></p>
 					</div>
 					<div class="fourcol" style="margin-top:10px;">
@@ -120,8 +120,7 @@
 		</div>
 		
 		<!-- thanks overlay -->
-		{% if thanks %}
-			<div class="thanksoverlay" id="thanksoverlay">
+			<div class="thanksoverlay" id="thanksoverlay" style="display:none;">
 			</div>
 			<div class="thanksbox" id="thanksbox">
 				<div class="container">
@@ -135,7 +134,6 @@
 					</div>
 				</div>
 			</div>
-		{% endif %}
 
 		<!-- html5 background video -->
 		<video id="bg_video" src="/hydramedia/img/bg.mp4" autoplay="true" loop="true">
@@ -217,44 +215,12 @@
 	
 	<script type="text/javascript">
 	$(function() {
-		$(document).ready(function(){
-			$('#thanksoverlay').fadeIn('fast',function(){
-				$('#thanksbox').animate({'top':'0px'},0);
-			});
-		});
-		$('#thanksclose').click(function(){
-			$('#thanksbox').animate({'top':'-200%'},0,function(){
-				$('#thanksoverlay').fadeOut('fast');
-			});
-		});
-
-	});
-	</script>
-	
-	<script type="text/javascript">
-	$(function() {
-		$('#signup').click(function(){
-			$('#thanksoverlay').fadeIn('fast',function(){
-				$('#thanksbox').animate({'top':'0px'},0);
-			});
-		});
-		$('#thanksclose').click(function(){
-			$('#thanksbox').animate({'top':'-200%'},0,function(){
-				$('#thanksoverlay').fadeOut('fast');
-			});
-		});
-
-	});
-	</script>
-	
-	<script type="text/javascript">
-	$(function() {
 	    $('input[type=text]').click(function() {
 	      $(this).val('');
 	      });
 	 });
 	</script>
-	
+
 	<script>
 	function validateEmail()
 	{
@@ -266,9 +232,32 @@
 		$('#id_email').css("border","1px solid red");
 		return false;
 	  }
+	else
+		{
+		var name = $("#id_firstname").val();
+		var email = $("#id_email").val();
+		var data = { name:name, email:email, csrfmiddlewaretoken: '{{ csrf_token }}' };
+		var args = { type:"POST", url:"hydra", data:data };
+		var request = $.ajax(args);
+		request.done(function(){
+			$('#newsletterbox').animate({'top':'-200%'},0,function(){
+				$('#newsletteroverlay').fadeOut('fast');
+			});			
+			$('#thanksoverlay').fadeIn('fast',function(){
+				$('#thanksbox').animate({'top':'0px'},0);
+			});
+			$('#thanksclose').click(function(){
+				$('#thanksbox').animate({'top':'-200%'},0,function(){
+					$('#thanksoverlay').fadeOut('fast');
+				});
+			});
+		});
+		return false;
+		}
 	}
 	</script>
 	
+
 
 	
 </body>
