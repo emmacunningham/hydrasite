@@ -240,15 +240,24 @@ h1{
 }
 
 .aboutbox{
-    position:fixed;
+    position:absolute;
     top:-200%;
-    left:10%;	
-	right:10%;
+    left:0;	
+	right:0;
 	background:transparent;
     color:#ffffff;
     padding:20px;
     z-index:101;
 	float:left;
+}
+
+.abouttext{
+	position:fixed;
+	width:80%;
+	text-align:justify;
+	margin-left:auto;
+	margin-right:auto;
+	left:25%;
 }
 
 a.boxclose{
@@ -289,6 +298,7 @@ a.aboutactivator{
 
 .newsletterbox{
     position:fixed;
+	left:0;
     top:-200%;
 	width:100%;
     background: #000000;
@@ -336,6 +346,7 @@ a.newsletterboxclose{
 	position:fixed;
 	bottom:2%;
 	margin-top:3%;
+	
 }
 
 #header {
@@ -365,9 +376,11 @@ a.newsletterboxclose{
 	height:20px;
 	text-align:left;
 	color:#505050;
+
 }
 
 p.topnav {
+	margin-left:0;
 	line-height:1.0;
 	font-size:10pt;
 	text-align:left;
@@ -386,6 +399,7 @@ p.topnav {
 	background: transparent url(../img/signup.png) no-repeat center;
 	float:left;
 	color:#FFFFFF;
+	margin-left:50px;
 }
 
 .thanksoverlay {
@@ -403,6 +417,7 @@ p.topnav {
 
 .thanksbox {
     position:fixed;
+	left:0;
     top:-200%;
 	width:100%;
     background: #000000;
@@ -459,16 +474,11 @@ input.signupinput {
 	height:100%;
 }
 
-/* ==|== media queries ======================================================
-   EXAMPLE Media Query for Responsive Design.
-   This example overrides the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+.row .boxcol {
+	position:absolute;
+	right: 40px;
+	width: 4.85%;
 }
-
 
 
 
