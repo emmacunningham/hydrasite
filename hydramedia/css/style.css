@@ -332,7 +332,6 @@ a.newsletterboxclose{
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
     cursor:pointer;
-    z-index:102;
 	display:inline-block;
 	/* For IE 7 */
 	zoom: 1;
@@ -447,7 +446,6 @@ a.thanksclose {
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
     cursor:pointer;
-    z-index:200;
 	display:inline-block;
 	/* For IE 7 */
 	zoom: 1;
@@ -495,7 +493,6 @@ input.signupinput {
 	right:40px;
 	margin-right:40px;
 	width: 4.85%;
-	z-index:202;
 }
 
 

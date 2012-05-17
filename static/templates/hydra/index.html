@@ -95,19 +95,19 @@
 		<div class="newsletterbox" id="newsletterbox">
 			<div class="container" style="padding-left:200px;">
 				<div class="row">
-					<div class="fourcol" style="margin-top:10px;">
+					<div class="fourcol" style="margin-top:10px">
 							<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
 							<form name="myForm" action="" onsubmit="return validateEmail()" >
 							<p><input class="signupinput" style="float:left;position:relative;" size="15%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" /></p>
 					</div>
-					<div class="fourcol" style="margin-top:10px;">
+					<div class="fourcol" style="margin-top:10px">
 							<p></p><br>
 							<p><input class="signupinput" size="15%" type="text" name="email" id="id_email" value="YOUR EMAIL" /></p>
 					</div>
-					<div class="onecol">
+					<div class="onecol" style="">
 							<button class="signup" type="submit" id="signup">SIGN UP</button>
 					</div>
-					<div class="boxcol" style="margin-right:80px;">
+					<div class="boxcol" style="margin-right:80px">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
 					</div>
 				</div>
@@ -195,13 +195,15 @@
 	$(function() {
 		$('#newsletteractivator').click(function(){
 			$('#newsletteroverlay').fadeIn('fast',function(){
-				$('#newsletterbox').animate({'top':'0px'},200);
+				$('#newsletterbox').animate({'top':'0px'},0);
 				$('#id_firstname').focus();
+				$('#newsletterboxclose').show(0);
 			});
 		});
 		$('#newsletterboxclose').click(function(){
-			$('#newsletterbox').animate({'top':'-200%'},500,function(){
-				$('#newsletteroverlay').fadeOut('fast');
+			$('#newsletterbox').animate({'top':'-200%'},0,function(){
+				$('#newsletteroverlay').fadeOut(0);
+				$('#newsletterboxclose').fadeOut(0);
 			});
 		});
 
@@ -236,14 +238,17 @@
 		var request = $.ajax(args);
 		request.done(function(){
 			$('#newsletterbox').animate({'top':'-200%'},0,function(){
-				$('#newsletteroverlay').fadeOut('fast');
+				$('#newsletteroverlay').hide(0);
+				$('#newsletterboxclose').hide(0);
 			});			
-			$('#thanksoverlay').fadeIn('fast',function(){
+			$('#thanksoverlay').fadeIn(0,function(){
 				$('#thanksbox').animate({'top':'0px'},0);
+				$('#thanksclose').animate({'top':'50px'},0);
 			});
 			$('#thanksclose').click(function(){
 				$('#thanksbox').animate({'top':'-200%'},0,function(){
-					$('#thanksoverlay').fadeOut('fast');
+					$('#thanksoverlay').hide(0);
+					$('#thanksclose').hide(0);
 				});
 			});
 		});
@@ -252,7 +257,6 @@
 	}
 	</script>
 	
-
 
 	
 </body>
