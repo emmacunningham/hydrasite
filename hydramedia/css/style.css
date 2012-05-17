@@ -248,7 +248,6 @@ h1{
     color:#ffffff;
     padding:20px;
     z-index:101;
-	float:left;
 }
 
 .abouttext{
@@ -262,6 +261,7 @@ h1{
 
 a.boxclose{
 	position:relative;
+	right:40px;
 	padding-top:50px;
     width:100px;
     height:100px;
@@ -269,8 +269,11 @@ a.boxclose{
     cursor:pointer;
     z-index:102;
 	margin-top:40px;
-	float:right;
-
+	margin-right:40px;
+	display:inline-block;
+	/* For IE 7 */
+	zoom: 1;
+	*display: inline;
 }
 
 a.aboutactivator{
@@ -281,6 +284,7 @@ a.aboutactivator{
 	bottom:0px;
 	left:0px;
 	cursor:pointer;
+	display:block;
 }
 
 .newsletteroverlay{
@@ -317,16 +321,22 @@ a.newsletteractivator{
 	left:0px;
 	z-index:1;
 	cursor:pointer;
+	display:block;
 }
 
 a.newsletterboxclose{
 	position:fixed;
 	margin-top:20px;
+	margin-right:40px;
     width:100px;
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
     cursor:pointer;
     z-index:102;
+	display:inline-block;
+	/* For IE 7 */
+	zoom: 1;
+	*display: inline;
 }
 
 
@@ -361,11 +371,12 @@ a.newsletterboxclose{
 .verticalline {
 	border-left:thin solid #484848;
 	padding-left:20px;
+	padding-top:20px;
 	margin-top:10px;
+	height:40px;
 	text-align:left;
 	line-height:1.0;
 	color:#000000;
-
 }
 
 .footerverticalline {
@@ -431,11 +442,16 @@ p.topnav {
 a.thanksclose {
 	position:fixed;
 	margin-top:10px;
+	margin-right:40px;
     width:100px;
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
     cursor:pointer;
     z-index:200;
+	display:inline-block;
+	/* For IE 7 */
+	zoom: 1;
+	*display: inline;
 }
 
 .newsletterform {
@@ -475,9 +491,11 @@ input.signupinput {
 }
 
 .row .boxcol {
-	position:absolute;
-	right: 40px;
+	position:fixed;
+	right:40px;
+	margin-right:40px;
 	width: 4.85%;
+	z-index:202;
 }
 
 
