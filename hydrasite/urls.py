@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^hydra/', 'hydra.views.index'),
-	url(r'^hydramedia/(?P<path>.*)$', 'django.views.static.serve',  
-	         {'document_root': settings.MEDIA_ROOT}),
+	url(r'^static/(?P<path>.*)$', 'django.views.static.serve',  
+	         {'document_root': settings.STATIC_ROOT}),
     url(r'^admin/', include(admin.site.urls)),
 )

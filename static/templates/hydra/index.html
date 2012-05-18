@@ -19,20 +19,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<!-- Boilerplate stylesheet -->
-	<link rel="stylesheet" href="/hydramedia/css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen">
 
 	<!-- 1140px Grid styles for IE -->
-	<!--[if lte IE 9]><link rel="stylesheet" href="/hydramedia/css/ie.css" type="text/css" media="screen" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="{{ STATIC_URL }}css/ie.css" type="text/css" media="screen" /><![endif]-->
 
 	<!-- The 1140px Grid - http://cssgrid.net/ -->
-	<link rel="stylesheet" href="/hydramedia/css/1140.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/1140.css" type="text/css" media="screen" />
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
-	<script type="text/javascript" src="/hydramedia/js/css3-mediaqueries.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/css3-mediaqueries.js"></script>
 
 	<!-- All JavaScript at the bottom, except this Modernizr build.
 	Modernizr enables HTML5 elements & feature detects for optimal performance.
 	Create your own custom Modernizr build: www.modernizr.com/download/ -->
-	<script src="/hydramedia/js/libs/modernizr-2.5.3.min.js"></script>
+	<script src="{{ STATIC_URL }}js/libs/modernizr-2.5.3.min.js"></script>
 	
 	<!-- TypeKit script -->
 	<script type="text/javascript" src="http://use.typekit.com/kcq7fyc.js"></script>
@@ -46,10 +46,11 @@
 	<header id="header">
 		<div class="container">
 			<div class="row">
-				<div class="twocol" style="margin-right:50px;">
-					<img src="/hydramedia/img/logo.png" id="logo"></div>
-				<div class="twocol"><div class="verticalline"><a class="aboutactivator" id="aboutactivator"><p class="topnav"><strong>ABOUT US/</strong><br>WHAT WE DO</p></a></div></div>
-				<div class="twocol"><div class="verticalline"><a class="newsletteractivator" id="newsletteractivator"><p class="topnav"><strong>NEWSLETTER/</strong><br>SIGN UP</p></a></div></div>
+				<div class="headercol" id="logo">
+					<img src="{{ STATIC_URL }}img/logo.png">
+				</div>
+				<div class="headercol"><div class="verticalline"><a class="aboutactivator" id="aboutactivator"><p class="topnav"><strong>ABOUT US/</strong><br>WHAT WE DO</p></a></div></div>
+				<div class="headercol"><div class="verticalline"><a class="newsletteractivator" id="newsletteractivator"><p class="topnav"><strong>NEWSLETTER/</strong><br>SIGN UP</p></a></div></div>
 			</div>
 		</div>
 	</header>
@@ -74,6 +75,11 @@
 		</div>
 		<div class="aboutbox" id="aboutbox">
 			<h1 style="text-align:center;"><strong>{{ abouthead }}</strong></h1>
+			<!-- onecol about -->			
+			<div class="aboutsinglecol">
+				{{ aboutleft }}  {{ aboutright }}
+			</div>
+			<!-- twocol about -->
 			<div class="container">
 				<div class="row">
 					<div class="abouttext">
@@ -93,7 +99,29 @@
 		<div class="newsletteroverlay" id="newsletteroverlay" style="display:none;">
 		</div>
 		<div class="newsletterbox" id="newsletterbox">
-			<div class="container" style="padding-left:200px;">
+			<!-- singlecol newsletter overlay -->
+			<div class="container">
+			<div class="row" id="newslettersingle">
+				<div class="newsinglecol">
+						<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
+						<form name="myForm" action="" onsubmit="return validateEmail()" >
+				</div>
+				<div class="newsinglecol">
+						<input class="signupinput" size="5%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
+				</div>
+				<div class="newsinglecol">
+						<input class="signupinput" size="5%" type="text" name="email" id="id_email" value="YOUR EMAIL" />
+				</div>
+				<div class="onecol">
+						<button class="signup" type="submit" id="signup">SIGN UP</button>
+				</div>
+				<div class="boxcol" style="margin-right:80px">
+					<a class="newsletterboxclose" id="newsletterboxclose"></a>
+				</div>
+			</div>
+			</div>
+			<!-- wide signup overlay-->
+			<div class="container" id="newsletterwide" style="padding-left:200px;">
 				<div class="row">
 					<div class="fourcol" style="margin-top:10px">
 							<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
@@ -112,7 +140,11 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>	
+		
+			
+			
+		
 		
 		<!-- thanks overlay -->
 			<div class="thanksoverlay" id="thanksoverlay" style="display:none;">
@@ -129,10 +161,29 @@
 					</div>
 				</div>
 			</div>
+	
+ 		<!-- main singlecol -->
+			<div class="singlecol" id="logo">
+				<img src="{{ STATIC_URL }}img/logo.png">
+			</div>
+			<div id="mobilemain">
+			<div class="singlecol"><div class="verticalline"><a class="aboutactivator" id="aaboutactivator"><p class="topnav"><strong>ABOUT US/</strong><br>WHAT WE DO</p></a></div></div>
+			<div class="singlecol"><div class="verticalline"><a class="newsletteractivator" id="nnewsletteractivator"><p class="topnav"><strong>NEWSLETTER/</strong><br>SIGN UP</p></a></div></div>
+
+			<div class="singlecol"><div class="verticalline"><p class="topnav"><strong>EMAIL</strong><br><a href="mailto:info@hydra.com">INFO@HYDRA.COM</a></p></div></div>
+			<div class="singlecol"><div class="verticalline" style="border-bottom:none;"><p class="topnav"><strong>PHONE</strong><br>800-123-4567</p></div></div>
+			</div>
 
 		<!-- html5 background video -->
-		<video id="bg_video" src="/hydramedia/img/bg.mp4" autoplay="true" loop="true">
+		<!-- 
+		<video id="bg_video" src="{{ STATIC_URL }}img/bg.mp4" autoplay="true" loop="true"> 
+		
+		-->
+		
+		
+		
 
+		
 	</div>
 
 	<footer id="footer">
@@ -141,15 +192,13 @@
 				<div class="ninecol">
 					<p class="darkgrey" id="footertext" style="margin-bottom:2%;"><strong style="color:#ffffff;">HYDRA.</strong> | &copy; 2012 Hydra. All Rights Reserved.</p>
 				</div>
-				<div class="onecol" style="text-align:left;">
+				<div class="onecol" id="footercontact" style="text-align:left;">
 					<p class="footerverticalline" id="footertext">EMAIL<br><strong class="lightgrey"><a href="mailto:info@hydra.com">INFO@HYDRA.COM</a></strong>
 					</p>
 				</div>
-				<div class="onecol" style="text-align:left; float:right; margin-right:40px;">
+				<div class="onecol" id="footercontact" style="text-align:left; float:right; margin-right:40px;">
 					<p class="footerverticalline" id="footertext">PHONE<br><strong class="lightgrey">800-123-4567</strong>
 					</p>
-				</div>
-				<div class="ninecol">
 				</div>
 			</div>
 		</div>
@@ -160,11 +209,11 @@
 
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="/hydramedia/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
 	<!-- scripts concatenated and minified via build script -->
-	<script src="/hydramedia/js/plugins.js"></script>
-	<script src="/hydramedia/js/script.js"></script>
+	<script src="{{ STATIC_URL }}js/plugins.js"></script>
+	<script src="{{ STATIC_URL }}js/script.js"></script>
 	<!-- end scripts -->
 
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
@@ -193,7 +242,44 @@
 	
 	<script type="text/javascript">
 	$(function() {
+		$('#aaboutactivator').click(function(){
+			$('#aboutoverlay').fadeIn('fast',function(){
+				$('#mobilemain').hide(0);
+				$('#aboutbox').animate({'top':'10%'},0);
+			});
+		});
+		$('#boxclose').click(function(){
+			$('#aboutbox').animate({'top':'-200%'},0,function(){
+				$('#aboutoverlay').fadeOut('fast');
+				$('#mobilemain').show(0);
+			});
+		});
+
+	});
+	</script>
+	
+	<script type="text/javascript">
+	$(function() {
 		$('#newsletteractivator').click(function(){
+			$('#newsletteroverlay').fadeIn('fast',function(){
+				$('#newsletterbox').animate({'top':'0px'},0);
+				$('#id_firstname').focus();
+				$('#newsletterboxclose').show(0);
+			});
+		});
+		$('#newsletterboxclose').click(function(){
+			$('#newsletterbox').animate({'top':'-200%'},0,function(){
+				$('#newsletteroverlay').fadeOut(0);
+				$('#newsletterboxclose').fadeOut(0);
+			});
+		});
+
+	});
+	</script>
+	
+	<script type="text/javascript">
+	$(function() {
+		$('#nnewsletteractivator').click(function(){
 			$('#newsletteroverlay').fadeIn('fast',function(){
 				$('#newsletterbox').animate({'top':'0px'},0);
 				$('#id_firstname').focus();
