@@ -476,7 +476,7 @@ input.signupinput {
 	font-weight:bold;
 	text-align:left;
 	margin:0 auto;
-
+	size:15%;
 }
 
 .emailError {
@@ -534,6 +534,11 @@ input.signupinput {
 
 #footercontact {
 	display:inline;
+}
+
+#footerphonecontact {
+float:right; 
+margin-right:40px;
 }
 
 .singlecol {
