@@ -99,63 +99,41 @@
 		<div class="newsletteroverlay" id="newsletteroverlay" style="display:none;">
 		</div>
 		<div class="newsletterbox" id="newsletterbox">
-			<!-- singlecol newsletter overlay -->
-			<div class="container">
-			<div class="row" id="newslettersingle">
-				<div class="newsinglecol">
-						<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
-						<form name="myForm" action="" onsubmit="return validateEmail()" >
-				</div>
-				<div class="newsinglecol">
-						<input class="signupinput" size="5%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
-				</div>
-				<div class="newsinglecol">
-						<input class="signupinput" size="5%" type="text" name="email" id="id_email" value="YOUR EMAIL" />
-				</div>
-				<div class="onecol">
-						<button class="signup" type="submit" id="signup">SIGN UP</button>
-				</div>
-				<div class="boxcol" style="margin-right:80px">
-					<a class="newsletterboxclose" id="newsletterboxclose"></a>
-				</div>
-			</div>
-			</div>
-			<!-- wide signup overlay-->
-			<div class="container" id="newsletterwide" style="padding-left:200px;">
+			<div class="container" id="newsletterwide">
 				<div class="row">
-					<div class="fourcol" style="margin-top:10px">
-							<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
-							<form name="myForm" action="" onsubmit="return validateEmail()" >
-							<p><input class="signupinput" style="float:left;position:relative;" size="15%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" /></p>
+				<div class="fivecol" style="text-align:left;">
+				<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
+				</div>
+				</div>
+				<div class="row" id="signrow">
+					<div class="signcol" style="margin-top:10px">
+						<form name="myForm" action="" onsubmit="return validateEmail()" >
+						<input class="signupinput" size="15%" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
 					</div>
-					<div class="fourcol" style="margin-top:10px">
-							<p></p><br>
-							<p><input class="signupinput" size="15%" type="text" name="email" id="id_email" value="YOUR EMAIL" /></p>
+					<div class="signcol" style="margin-top:10px">
+							<input class="signupinput" size="15%" type="text" name="email" id="id_email" value="YOUR EMAIL" />
 					</div>
-					<div class="onecol" style="">
+					<div class="subcol">
 							<button class="signup" type="submit" id="signup">SIGN UP</button>
 					</div>
-					<div class="boxcol" style="margin-right:80px">
+					<div class="boxcol" id="newboxcol">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
 					</div>
 				</div>
 			</div>
 		</div>	
 		
-			
-			
-		
-		
+
 		<!-- thanks overlay -->
 			<div class="thanksoverlay" id="thanksoverlay" style="display:none;">
 			</div>
 			<div class="thanksbox" id="thanksbox">
 				<div class="container">
-					<div class="row">
-						<div class="tencol">
-							Thanks for signing up!
+					<div class="row" id="thanksrow">
+						<div class="thankscol">
+							<p class="topnav" style="font-size:.5em;">Thanks for signing up!</p>
 						</div>
-						<div class="twocol" style="align:right; float:right;">
+						<div class="thankscol">
 							<a class="thanksclose" id="thanksclose"></a>
 						</div>
 					</div>
@@ -178,12 +156,7 @@
 
 		<video id="bg_video" src="{{ STATIC_URL }}img/bg.mp4" autoplay="true" loop="true"> 
 		
-
-		
-		
-		
-
-		
+	
 	</div>
 
 	<footer id="footer">
@@ -228,12 +201,16 @@
 	$(function() {
 		$('#aboutactivator').click(function(){
 			$('#aboutoverlay').fadeIn('fast',function(){
-				$('#aboutbox').animate({'top':'30%'},0);
+				$('#mobilemain').hide(0);
+				$('#footer').hide(0);
+				$('#aboutbox').animate({'top':'20%'},0);
 			});
 		});
 		$('#boxclose').click(function(){
 			$('#aboutbox').animate({'top':'-200%'},0,function(){
 				$('#aboutoverlay').fadeOut('fast');
+				$('#footer').show(0);
+				$('#mobilemain').show(0);
 			});
 		});
 
@@ -245,12 +222,14 @@
 		$('#aaboutactivator').click(function(){
 			$('#aboutoverlay').fadeIn('fast',function(){
 				$('#mobilemain').hide(0);
+				$('#footer').hide(0);
 				$('#aboutbox').animate({'top':'10%'},0);
 			});
 		});
 		$('#boxclose').click(function(){
 			$('#aboutbox').animate({'top':'-200%'},0,function(){
 				$('#aboutoverlay').fadeOut('fast');
+				$('#footer').show(0);
 				$('#mobilemain').show(0);
 			});
 		});
@@ -260,7 +239,7 @@
 	
 	<script type="text/javascript">
 	$(function() {
-		$('#newsletteractivator').click(function(){
+		$('#newsletteractivator,#nnewsletteractivator').click(function(){
 			$('#newsletteroverlay').fadeIn('fast',function(){
 				$('#newsletterbox').animate({'top':'0px'},0);
 				$('#id_firstname').focus();
@@ -276,25 +255,7 @@
 
 	});
 	</script>
-	
-	<script type="text/javascript">
-	$(function() {
-		$('#nnewsletteractivator').click(function(){
-			$('#newsletteroverlay').fadeIn('fast',function(){
-				$('#newsletterbox').animate({'top':'0px'},0);
-				$('#id_firstname').focus();
-				$('#newsletterboxclose').show(0);
-			});
-		});
-		$('#newsletterboxclose').click(function(){
-			$('#newsletterbox').animate({'top':'-200%'},0,function(){
-				$('#newsletteroverlay').fadeOut(0);
-				$('#newsletterboxclose').fadeOut(0);
-			});
-		});
 
-	});
-	</script>
 	
 	<script type="text/javascript">
 	$(function() {

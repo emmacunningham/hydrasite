@@ -309,6 +309,11 @@ a.aboutactivator{
     z-index:101;
 }
 
+#newsletterwide {
+	padding-left:20%;
+	padding-bottom:5%;
+}
+
 a.newsletteractivator{
 	position:relative;
 	margin-left:10px;
@@ -321,7 +326,6 @@ a.newsletteractivator{
 a.newsletterboxclose{
 	position:fixed;
 	margin-top:20px;
-	margin-right:40px;
     width:100px;
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
@@ -409,9 +413,10 @@ p.topnav {
 	height:80px;
 	border:none;
 	background: transparent url(../img/signup.png) no-repeat center;
-	float:left;
+	display:inline-block;
 	color:#FFFFFF;
-	margin-left:50px;
+	margin-left:0%;
+	margin-right:0;
 }
 
 .thanksoverlay {
@@ -454,11 +459,6 @@ a.thanksclose {
 	*display: inline;
 }
 
-.newsletterform {
-	background:#000000;
-	font-size:3em;
-	text-align:left;
-}
 
 .lightgrey {
 	color:#9e9e9e;
@@ -472,9 +472,11 @@ input.signupinput {
 	color:#ffffff;
 	background:#000000;
 	border:none;
-	font-size:3em;
+	font-size:200%;
 	font-weight:bold;
 	text-align:left;
+	margin:0 auto;
+
 }
 
 .emailError {
@@ -497,6 +499,39 @@ input.signupinput {
 	width: 4.85%;
 }
 
+.row .signcol {
+	margin-left:0%;
+	margin-right: 0%;
+	padding-top:2%;
+	display:inline-block;
+	width:30%;
+}
+
+.row .subcol {
+	position:fixed;
+	display:inline-block;
+	margin-right:5%;
+	margin-right:40px;
+}
+
+.row .thankscol {
+	position:relative;
+	width: 20%;
+	display:inline;
+}
+
+#signrow {
+	position:fixed;
+	display:inline-block;
+	text-align:left;
+}
+
+#newboxcol {
+	position:fixed;
+	display:inline-block;
+	margin-right:5%;
+}
+
 #footercontact {
 	display:inline;
 }
@@ -515,9 +550,10 @@ input.signupinput {
 	padding:0;
 }
 
-#newslettersingle {
-	display:none;
+#thanksrow {
+	margin-left:20%;
 }
+
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

@@ -150,23 +150,43 @@ img {
 	}
 	
 	#newsletterwide{
-	display:none;
-	}
-	
-	#newslettersingle{
-	display:inline-block;
-	width:100%;
+	display:block;
+	padding:0;
 	}
 	
 	.newsletterbox,#newsletterbox{
 	width:100%;
+	height:100%;
 	}
-	.newsinglecol {
-	display:inline-block;
+	
+	.thanksbox,#thanksbox {
 	width:100%;
-	position:relative;
-
+	height:100%;
+	display:block;
 	}
+
+	.row .thankscol {
+	width: 100%;
+	padding-bottom:10%;
+	display:block;
+	}
+	
+	#thanksrow {
+	margin-left:0;
+	display:block;
+	}
+	
+	a.thanksclose {
+	position:relative;
+	display:block;
+	margin-left:30%;
+	}
+	
+	.row .signcol {
+	width: 100%;
+	padding-bottom:10%;
+	}
+	
 	a.aboutactivator,#aboutactivator {
 	display:block;
 	padding:0;
@@ -185,6 +205,14 @@ img {
 	color:#000000;
 	}
 	
+	p.signupnav {
+	margin-left:0;
+	margin-bottom:0;
+	line-height:1.0;
+	font-size:120%;
+	text-align:left;
+	}
+	
 	p.topnav {
 	margin-bottom:10px;
 	}
@@ -196,17 +224,32 @@ img {
 	margin-left:auto;
 	}
 
-	.row .onecol {
-	width: 20%;
+	#newboxcol {
+	position:fixed;
+	width:20%;
+	margin:0 auto;
+	display:inline-block;
 	}
+
+	.row .onecol {
+	width: 50%;
+	}
+	
+	.row .twocol {
+	width: 50%;
+	display:block;
+	}
+	
 	.row .ninecol {
 	width: 50%;
 	}
 	
+	.row .fivecol {
+	width: 100%;
+	}
+	
 	input.signupinput {
-	font-size:12pt;
 	position:fixed;
-	left:0;
 	}
 	
 	.signup {
