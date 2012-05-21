@@ -492,6 +492,16 @@ input.signupinput {
 	height:100%;
 }
 
+#bg_video_safari {
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+	height:100%;
+}
+
+
 .row .boxcol {
 	position:fixed;
 	right:40px;

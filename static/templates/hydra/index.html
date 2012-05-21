@@ -153,9 +153,9 @@
 			</div>
 
 		<!-- html5 background video -->
+		<video id="bg_video" src="{{ STATIC_URL }}img/bg.webm" autoplay="true" loop="true"></video>
+		<video id="bg_video_safari" style="display:none;" src="{{ STATIC_URL }}img/bg.mp4" autoplay="true" loop="true"></video>
 
-		<video id="bg_video" src="{{ STATIC_URL }}img/bg.mp4" autoplay="true" loop="true"> 
-		
 	
 	</div>
 
@@ -216,6 +216,14 @@
 
 	});
 	</script>
+	
+	<script type="text/javascript">
+	if ($.browser.safari) {
+		$('#bg_video').hide(0);
+		$('#bg_video_safari').show(0);
+	}
+	</script>
+	
 	
 	<script type="text/javascript">
 	$(function() {
