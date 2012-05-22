@@ -152,11 +152,11 @@
 			<div class="singlecol"><div class="verticalline" style="border-bottom:none;"><p class="topnav"><strong>PHONE</strong><br>800-123-4567</p></div></div>
 			</div>
 
-		<!-- html5 background video -->
+		<!-- html5 background video 
 		<video id="bg_video" src="{{ STATIC_URL }}img/bg.webm" autoplay="true" loop="true"></video>
 		<video id="bg_video_safari" style="display:none;" src="{{ STATIC_URL }}img/bg.mp4" autoplay="true" loop="true"></video>
-
-	
+		-->
+		
 	</div>
 
 	<footer id="footer">
@@ -217,6 +217,25 @@
 	</script>
 	
 	<script type="text/javascript">
+	var userAgent = navigator.userAgent.toLowerCase(); 
+	$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
+
+	// Is this a version of Chrome?
+	if($.browser.chrome){
+	  userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
+	  userAgent = userAgent.substring(0,userAgent.indexOf('.'));
+	  $.browser.version = userAgent;
+	  // If it is chrome then jQuery thinks it's safari so we have to tell it it isn't
+	  $.browser.safari = false;
+	}
+
+	// Is this a version of Safari?
+	if($.browser.safari){
+	  userAgent = userAgent.substring(userAgent.indexOf('safari/') +7);
+	  userAgent = userAgent.substring(0,userAgent.indexOf('.'));
+	  $.browser.version = userAgent;
+	}
+	
 	if ($.browser.safari) {
 		$('#bg_video').hide(0);
 		$('#bg_video_safari').show(0);
