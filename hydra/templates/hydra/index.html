@@ -151,13 +151,21 @@
 			<div class="singlecol"><div class="verticalline"><p class="topnav"><strong>EMAIL</strong><br><a href="mailto:info@hydra.com">INFO@HYDRA.COM</a></p></div></div>
 			<div class="singlecol"><div class="verticalline" style="border-bottom:none;"><p class="topnav"><strong>PHONE</strong><br>800-123-4567</p></div></div>
 			</div>
-			<div class="singlecol"><div class="verticalline" style="border-bottom:none;font-size:.5em;"><p class="topnav"><strong>HYDRA.</strong> | &copy; 2012 Hydra. All Rights Reserved.</p></div></div>
+			<div style="margin-left:0;margin-right:0;margin-bottom:0;padding-top:2px;width:100%;background:#000000;position:fixed;left:0;bottom:0;height:20px;"><div class="verticalline" style="border-bottom:none;color:#ffffff;font-size:.5em;"><p class="topnav"><strong>HYDRA.</strong> | &copy; 2012 Hydra. All Rights Reserved.</p></div></div>
 			</div>
 
-		<!-- html5 background video 
-		<video id="bg_video" src="{{ STATIC_URL }}img/bg.webm" autoplay="true" loop="true"></video>
-		<video id="bg_video_safari" style="display:none;" src="{{ STATIC_URL }}img/bg.mp4" autoplay="true" loop="true"></video>
-		-->
+		<!-- html5 background video -->
+		<div id="bg_video">
+		<video autoplay="true" loop="true">
+			<!-- if Firefox/Chrome -->  
+			<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
+			<!-- if Safari -->  
+			<source src="{{ STATIC_URL }}img/bg.mp4" type="video/mp4">
+			<!-- everybody else -->  
+			<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;">
+		</video>
+		</div>
+		
 		
 	</div>
 
@@ -219,33 +227,6 @@
 	</script>
 	
 	<script type="text/javascript">
-	var userAgent = navigator.userAgent.toLowerCase(); 
-	$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
-
-	// Is this a version of Chrome?
-	if($.browser.chrome){
-	  userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
-	  userAgent = userAgent.substring(0,userAgent.indexOf('.'));
-	  $.browser.version = userAgent;
-	  // If it is chrome then jQuery thinks it's safari so we have to tell it it isn't
-	  $.browser.safari = false;
-	}
-
-	// Is this a version of Safari?
-	if($.browser.safari){
-	  userAgent = userAgent.substring(userAgent.indexOf('safari/') +7);
-	  userAgent = userAgent.substring(0,userAgent.indexOf('.'));
-	  $.browser.version = userAgent;
-	}
-	
-	if ($.browser.safari) {
-		$('#bg_video').hide(0);
-		$('#bg_video_safari').show(0);
-	}
-	</script>
-	
-	
-	<script type="text/javascript">
 	$(function() {
 		$('#aaboutactivator').click(function(){
 			$('#aboutoverlay').fadeIn('fast',function(){
@@ -284,36 +265,32 @@
 	});
 	</script>
 
-	
-	<script type="text/javascript">
-	$(function() {
-	    $('input[type=text]').click(function() {
-	      $(this).val('');
-	      });
-	 });
+	<script>
+		var nameval = 1;
+		var emailval = 1;
+
+
+
+
+		if ($("#id_email").keyup()) {
+			emailval = 1;
+		}
+		
+		
 	</script>
 	
-	<script type="text/javascript">
-	$(function() {
-		var val = $(this).val()
-		if (val == '') {
-			$('#id_firstname').focusout(function() {
-		      $('#id_firstname').val('YOUR NAME');
-		      });
-			$('#id_email').focusout(function() {
-	      	  $('#id_email').val('YOUR EMAIL');
-      		  });
-		}
-		else {
-			$('#id_firstname').focusout(function() {
-		      $('#id_firstname').val() = val;
-		      });
-			$('#id_email').focusout(function() {
-	      	  $('#id_email').val() = val;
-      		  });
-		}
-	 });
+	<script>
+		var nameval
+	    $("#id_firstname").keyup(function () {
+	      	nameval = $(this).val();
+			if (nameval == '') {
+				$("#id_firstname").focusout(function(){
+					$("#id_firstname").val('YOUR NAME');
+				});
+			}
+	    }).keyup();
 	</script>
+	
 	
 
 	<script>
