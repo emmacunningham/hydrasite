@@ -280,15 +280,45 @@
 	</script>
 	
 	<script>
-		var nameval
+		
 	    $("#id_firstname").keyup(function () {
-	      	nameval = $(this).val();
-			if (nameval == '') {
-				$("#id_firstname").focusout(function(){
-					$("#id_firstname").val('YOUR NAME');
-				});
-			}
+	      	var nameval = $(this).val();
 	    }).keyup();
+	
+		$("#id_firstname").click(function() {
+			var nameval = $("#id_firstname").val();
+			if (nameval == 'YOUR NAME') {
+				$("#id_firstname").val('');
+			}
+		});
+		
+		$("#id_firstname").focusout(function() {
+			var nameval = $("#id_firstname").val();
+			if (nameval == '') {
+				$("#id_firstname").val('YOUR NAME');
+			}
+		});
+		
+		$("#id_email").keyup(function () {
+	      	var emailval = $(this).val();
+	    }).keyup();
+	
+		$("#id_email").click(function() {
+			var emailval = $("#id_email").val();
+			if (emailval == 'YOUR EMAIL') {
+				$("#id_email").val('');
+			}
+		});
+		
+		$("#id_email").focusout(function() {
+			var emailval = $("#id_email").val();
+			if (emailval == '') {
+				$("#id_email").val('YOUR EMAIL');
+			}
+		});
+	    
+
+
 	</script>
 	
 	
