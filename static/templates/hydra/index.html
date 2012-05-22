@@ -271,6 +271,29 @@
 	      });
 	 });
 	</script>
+	
+	<script type="text/javascript">
+	$(function() {
+		var val = $(this).val()
+		if (val == '') {
+			$('#id_firstname').focusout(function() {
+		      $('#id_firstname').val('YOUR NAME');
+		      });
+			$('#id_email').focusout(function() {
+	      	  $('#id_email').val('YOUR EMAIL');
+      		  });
+		}
+		else {
+			$('#id_firstname').focusout(function() {
+		      $('#id_firstname').val() = val;
+		      });
+			$('#id_email').focusout(function() {
+	      	  $('#id_email').val() = val;
+      		  });
+		}
+	 });
+	</script>
+	
 
 	<script>
 	function validateEmail()
