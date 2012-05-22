@@ -159,6 +159,10 @@ img {
 	display:none;
 	}
 	
+	#bg_video_safari {
+	display:none;
+	}
+	
 	.singlecol{
 	display:block;
 	width:100%;
@@ -285,9 +289,6 @@ img {
 	position:fixed;
 	}
 	
-	.signup {
-	margin-left:0px;
-	}
 
 }
 
