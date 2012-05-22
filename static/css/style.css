@@ -310,7 +310,6 @@ a.aboutactivator{
 }
 
 #newsletterwide {
-	padding-left:20%;
 	padding-bottom:5%;
 }
 
@@ -408,13 +407,14 @@ p.topnav {
 }
 
 .signup {
+	position:fixed;
 	width:80px;
 	height:80px;
 	border:none;
 	background: transparent url(../img/signup.png) no-repeat center;
 	display:inline-block;
 	color:#FFFFFF;
-	margin-left:0%;
+	margin-left:150px;
 	margin-right:0;
 }
 
@@ -510,7 +510,7 @@ input.signupinput {
 
 .row .signcol {
 	margin-left:0%;
-	margin-right: 0%;
+	margin-right:5%;
 	padding-top:2%;
 	display:inline-block;
 	width:30%;
