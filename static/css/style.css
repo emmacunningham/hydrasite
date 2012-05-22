@@ -250,6 +250,11 @@ h1{
     z-index:101;
 }
 
+.aboutbox h1 {
+  text-align:center;
+  font-weight:700;
+}
+
 .abouttext{
 	position:fixed;
 	width:80%;
