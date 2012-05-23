@@ -141,6 +141,7 @@
 					</div>
 					<div class="boxcol" id="newboxcol">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
+						<a class="newmobileboxclose" id="newmobileboxclose" style="align:right;display:none;"></a>
 					</div>
 				</div>
 			</div>
@@ -189,8 +190,8 @@
 		</video>
 		</div>
 		
-		
-	</div>
+	</div>	
+
 
 	<footer id="footer">
 		<div class="container">
@@ -277,12 +278,13 @@
 				$('#newsletterbox').animate({'top':'0px'},0);
 				$('#id_firstname').focus();
 				$('#newsletterboxclose').show(0);
+				$('#newmobileboxclose').show(0);
 			});
 		});
-		$('#newsletterboxclose').click(function(){
+		$('#newsletterboxclose,#newmobileboxclose').click(function(){
 			$('#newsletterbox').animate({'top':'-200%'},0,function(){
 				$('#newsletteroverlay').fadeOut(0);
-				$('#newsletterboxclose').fadeOut(0);
+				$('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
 			});
 		});
 
