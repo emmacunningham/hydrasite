@@ -115,11 +115,17 @@ img {
 	.row .signcol {
 	width:20%;
 	display:inline-block;
+	/* For IE 7 */
+	zoom: 1;
+	*display: inline;
 	}
 	
 	#newsletterwide {
 	padding-left:;
 	display:inline-block;
+	/* For IE 7 */
+	zoom: 1;
+	*display: inline;
 	}
 	
 	input.signupinput {
