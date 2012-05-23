@@ -329,7 +329,7 @@ a.newsletteractivator{
 
 a.newsletterboxclose{
 	position:fixed;
-	margin-top:20px;
+	margin-top:30px;
     width:100px;
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
@@ -412,15 +412,18 @@ p.topnav {
 }
 
 .signup {
-	position:fixed;
+	position:absolute;
 	width:80px;
 	height:80px;
 	border:none;
 	background: transparent url(../img/signup.png) no-repeat center;
 	display:inline-block;
 	color:#FFFFFF;
-	margin-left:150px;
-	margin-right:0;
+	margin-left:0px;
+	margin-right:20px;
+	/* For IE 7 */
+	zoom: 1;
+	*display: inline;
 }
 
 .thanksoverlay {
@@ -513,31 +516,40 @@ input.signupinput {
 	width: 4.85%;
 }
 
+.row {
+	position:absolute;
+	left:0;
+	padding-left:40px;
+	padding-right:40px;
+}
+
+#signrow {
+	height:100%;
+}
+
 .row .signcol {
+	position:relative;
 	margin-left:0%;
 	margin-right:5%;
 	padding-top:2%;
+	padding-left:0;
 	display:inline-block;
 	width:30%;
+	height:100%;
+	text-align:left;
+	float:left;
 }
 
 .row .subcol {
-	position:fixed;
+	position:relative;
 	display:inline-block;
-	margin-right:5%;
-	margin-right:40px;
+	margin-right:100px;
 }
 
 .row .thankscol {
 	position:relative;
 	width: 20%;
 	display:inline;
-}
-
-#signrow {
-	position:fixed;
-	display:inline-block;
-	text-align:left;
 }
 
 #newboxcol {
