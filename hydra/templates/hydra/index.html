@@ -70,15 +70,20 @@
 					<div class="boxcol">
 						<a class="boxclose" id="boxclose" style="align:right;"></a>
 					</div>
+					
 				</div>
 			</div>
 		</div>
 		<div class="aboutbox" id="aboutbox">
+			<div class="boxcol">
+				<a class="mobileboxclose" id="mobileboxclose" style="align:right;display:none;"></a>
+			</div>
 			<h1>{{ abouthead }}</h1>
 			<!-- onecol about -->			
 			<div class="aboutsinglecol">
 				{{ aboutleft }}  {{ aboutright }}
 			</div>
+
 			<!-- twocol about -->
 			<div class="container">
 				<div class="row">
@@ -249,15 +254,16 @@
 		$('#aaboutactivator').click(function(){
 			$('#aboutoverlay').fadeIn('fast',function(){
 				$('#mobilemain').hide(0);
-				$('#footer').hide(0);
-				$('#aboutbox').animate({'top':'0'},0);
+				$('#aboutbox').animate({'top':'0px'},0);
+				$('#mobileboxclose').show(0);
 			});
 		});
-		$('#boxclose').click(function(){
+		$('#mobileboxclose').click(function(){
 			$('#aboutbox').animate({'top':'-200%'},0,function(){
 				$('#aboutoverlay').fadeOut('fast');
-				$('#footer').show(0);
 				$('#mobilemain').show(0);
+				$('#mobileboxclose').hide(0);
+				
 			});
 		});
 
