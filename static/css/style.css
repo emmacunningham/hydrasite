@@ -291,6 +291,9 @@ a.aboutactivator{
 	font-size:1em;
 	color:#000000;
 	cursor:pointer;
+	display: block;
+	float: left;
+	clear: left;
 }
 
 .newsletteroverlay{
@@ -329,6 +332,9 @@ a.newsletteractivator{
 	color:#000000;
 	z-index:1;
 	cursor:pointer;
+	display: block;
+	float: left;
+	clear: left;
 }
 
 a.newsletterboxclose{
@@ -342,6 +348,7 @@ a.newsletterboxclose{
 	/* For IE 7 */
 	zoom: 1;
 	*display: inline;
+	
 }
 
 #footer {
@@ -389,6 +396,7 @@ a.newsletterboxclose{
 	text-align:left;
 	line-height:1.0;
 	color:#000000;
+	clear:left;
 }
 
 .footerverticalline {
@@ -408,6 +416,7 @@ p.topnav {
 	line-height:1.0;
 	font-size:1.2em;
 	text-align:left;
+	clear:left;
 }
 
 #logo {
