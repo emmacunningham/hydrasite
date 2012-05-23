@@ -256,12 +256,13 @@ h1{
 }
 
 .abouttext{
-	position:fixed;
 	width:80%;
+	left:25%;
+	right:25%;
+	position:fixed;
 	text-align:left;
 	margin-left:auto;
 	margin-right:auto;
-	left:25%;
 	font-size:1.1em;
 	line-height: 1.5em;
 }
