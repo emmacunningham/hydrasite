@@ -70,15 +70,20 @@
 					<div class="boxcol">
 						<a class="boxclose" id="boxclose" style="align:right;"></a>
 					</div>
+					
 				</div>
 			</div>
 		</div>
 		<div class="aboutbox" id="aboutbox">
+			<div class="boxcol">
+				<a class="mobileboxclose" id="mobileboxclose" style="align:right;display:none;"></a>
+			</div>
 			<h1>{{ abouthead }}</h1>
 			<!-- onecol about -->			
 			<div class="aboutsinglecol">
 				{{ aboutleft }}  {{ aboutright }}
 			</div>
+
 			<!-- twocol about -->
 			<div class="container">
 				<div class="row">
@@ -102,16 +107,34 @@
 			<div class="container" id="newsletterwide">
 				<div class="row">
 				<div class="fivecol" style="text-align:left;">
+					<div id="mobileonlyhacks">
+						<br><br><br>
+					</div>
 				<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
 				</div>
+				</div>
+				<div id="mobileonlyhacks">
+					<br><br><br>
+				</div>
+				<div id="mobileonlyhacks">
+					<br><br><br>
 				</div>
 				<div class="row" id="signrow">
 					<div class="signcol" style="margin-top:10px;margin-right:0px;">
 						<form name="myForm" action="" onsubmit="return validateEmail()" >
 						<input class="signupinput" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
 					</div>
+					<div id="mobileonlyhacks">
+						<br><br><br>
+					</div>
 					<div class="signcol" style="margin-top:10px;">
 							<input class="signupinput" type="text" name="email" id="id_email" value="YOUR EMAIL" />
+					</div>
+					<div id="mobileonlyhacks">
+						<br><br><br>
+					</div>
+					<div id="mobileonlyhacks">
+						<br><br><br>
 					</div>
 					<div class="subcol">
 							<button class="signup" type="submit" id="signup">SIGN UP</button>
@@ -172,7 +195,7 @@
 	<footer id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="ninecol">
+				<div class="eightcol">
 					<p class="darkgrey" id="footertext" style="margin-bottom:2%;"><strong style="color:#ffffff;">HYDRA.</strong> | &copy; 2012 Hydra. All Rights Reserved.</p>
 				</div>
 				<div class="onecol" id="footercontact" style="text-align:left;">
@@ -231,15 +254,16 @@
 		$('#aaboutactivator').click(function(){
 			$('#aboutoverlay').fadeIn('fast',function(){
 				$('#mobilemain').hide(0);
-				$('#footer').hide(0);
-				$('#aboutbox').animate({'top':'0'},0);
+				$('#aboutbox').animate({'top':'0px'},0);
+				$('#mobileboxclose').show(0);
 			});
 		});
-		$('#boxclose').click(function(){
+		$('#mobileboxclose').click(function(){
 			$('#aboutbox').animate({'top':'-200%'},0,function(){
 				$('#aboutoverlay').fadeOut('fast');
-				$('#footer').show(0);
 				$('#mobilemain').show(0);
+				$('#mobileboxclose').hide(0);
+				
 			});
 		});
 
@@ -263,20 +287,6 @@
 		});
 
 	});
-	</script>
-
-	<script>
-		var nameval = 1;
-		var emailval = 1;
-
-
-
-
-		if ($("#id_email").keyup()) {
-			emailval = 1;
-		}
-		
-		
 	</script>
 	
 	<script>

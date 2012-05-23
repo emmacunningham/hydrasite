@@ -281,12 +281,19 @@ a.boxclose{
 	*display: inline;
 }
 
+a.mobileboxclose {
+	display:none;
+}
+
 a.aboutactivator{
 	position:relative;
 	margin-left:10px;
 	font-size:1em;
 	color:#000000;
 	cursor:pointer;
+	display: block;
+	float: left;
+	clear: left;
 }
 
 .newsletteroverlay{
@@ -325,11 +332,14 @@ a.newsletteractivator{
 	color:#000000;
 	z-index:1;
 	cursor:pointer;
+	display: block;
+	float: left;
+	clear: left;
 }
 
 a.newsletterboxclose{
 	position:fixed;
-	margin-top:20px;
+	margin-top:30px;
     width:100px;
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
@@ -338,6 +348,7 @@ a.newsletterboxclose{
 	/* For IE 7 */
 	zoom: 1;
 	*display: inline;
+	
 }
 
 #footer {
@@ -385,6 +396,7 @@ a.newsletterboxclose{
 	text-align:left;
 	line-height:1.0;
 	color:#000000;
+	clear:left;
 }
 
 .footerverticalline {
@@ -404,6 +416,7 @@ p.topnav {
 	line-height:1.0;
 	font-size:1.2em;
 	text-align:left;
+	clear:left;
 }
 
 #logo {
@@ -412,15 +425,18 @@ p.topnav {
 }
 
 .signup {
-	position:fixed;
+	position:absolute;
 	width:80px;
 	height:80px;
 	border:none;
 	background: transparent url(../img/signup.png) no-repeat center;
 	display:inline-block;
 	color:#FFFFFF;
-	margin-left:150px;
-	margin-right:0;
+	margin-left:0px;
+	margin-right:20px;
+	/* For IE 7 */
+	zoom: 1;
+	*display: inline;
 }
 
 .thanksoverlay {
@@ -513,31 +529,40 @@ input.signupinput {
 	width: 4.85%;
 }
 
+.row {
+	position:absolute;
+	left:0;
+	padding-left:40px;
+	padding-right:40px;
+}
+
+#signrow {
+	height:100%;
+}
+
 .row .signcol {
+	position:relative;
 	margin-left:0%;
 	margin-right:5%;
 	padding-top:2%;
+	padding-left:0;
 	display:inline-block;
 	width:30%;
+	height:100%;
+	text-align:left;
+	float:left;
 }
 
 .row .subcol {
-	position:fixed;
+	position:relative;
 	display:inline-block;
-	margin-right:5%;
-	margin-right:40px;
+	margin-right:100px;
 }
 
 .row .thankscol {
 	position:relative;
 	width: 20%;
 	display:inline;
-}
-
-#signrow {
-	position:fixed;
-	display:inline-block;
-	text-align:left;
 }
 
 #newboxcol {
@@ -547,12 +572,15 @@ input.signupinput {
 }
 
 #footercontact {
-	display:inline;
+	position:absolute;
+	display:inline-block;
 }
 
 #footerphonecontact {
+	position:relative;
 	float:right; 
 	margin-right:40px;
+	width:15%;
 }
 
 .singlecol {
@@ -586,6 +614,10 @@ input.signupinput {
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+
+#mobileonlyhacks {
+	display:none;
 }
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
