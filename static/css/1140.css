@@ -520,5 +520,24 @@ img {
 		display:block;
 	}
 	
+	a.mobileboxclose{
+		position:fixed;
+		right:5px;
+		top:10px;
+	    width:30px;
+	    height:30px;
+	    background:transparent url(../img/close.png) no-repeat top right;
+		background-size:100%;
+	    cursor:pointer;
+	    z-index:102;
+		display:inline-block;
+		/* For IE 7 */
+		zoom: 1;
+		*display: inline;
+	}
+
+	a.boxclose,#boxclose {
+		display:none;
+	}
 
 }

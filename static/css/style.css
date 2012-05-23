@@ -281,6 +281,10 @@ a.boxclose{
 	*display: inline;
 }
 
+a.mobileboxclose {
+	display:none;
+}
+
 a.aboutactivator{
 	position:relative;
 	margin-left:10px;
