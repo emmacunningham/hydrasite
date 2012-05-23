@@ -603,6 +603,10 @@ input.signupinput {
 	left: 0;
 }
 
+#mobileonlyhacks {
+	display:none;
+}
+
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
 	#fallback {
 		left: 50%;
