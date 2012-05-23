@@ -542,8 +542,8 @@ img {
 		top:10px;
 	    width:30px;
 	    height:30px;
-	    background:transparent url(../img/close.png) no-repeat top right;
-		background-size:100%;
+	    background:transparent url(../img/close.png) center center;
+		background-size:30px 30px;
 	    cursor:pointer;
 	    z-index:102;
 		display:inline-block;
