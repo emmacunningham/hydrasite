@@ -559,12 +559,15 @@ input.signupinput {
 }
 
 #footercontact {
-	display:inline;
+	position:absolute;
+	display:inline-block;
 }
 
 #footerphonecontact {
+	position:relative;
 	float:right; 
 	margin-right:40px;
+	width:15%;
 }
 
 .singlecol {
