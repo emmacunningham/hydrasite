@@ -577,10 +577,26 @@ img {
 
 	a.newmobileboxclose{
 		position:fixed;
-		right:5px;
-		top:180px;
-	    width:80px;
-	    height:80px;
+		right:20px;
+		top:200px;
+	    width:50px;
+	    height:50px;
+	    background:transparent url(../img/close.png) no-repeat center center;
+		background-size:100%;
+	    cursor:pointer;
+	    z-index:102;
+		display:inline-block;
+		/* For IE 7 */
+		zoom: 1;
+		*display: inline;
+	}
+
+	a.thanksclose{
+		position:fixed;
+		right:20px;
+		top:200px;
+	    width:50px;
+	    height:50px;
 	    background:transparent url(../img/close.png) no-repeat center center;
 		background-size:100%;
 	    cursor:pointer;

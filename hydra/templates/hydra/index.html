@@ -351,18 +351,18 @@
 		var name = $("#id_firstname").val();
 		var email = $("#id_email").val();
 		var data = { name:name, email:email, csrfmiddlewaretoken: '{{ csrf_token }}' };
-		var args = { type:"POST", url:"hydra", data:data };
+		var args = { type:"POST", url:"/", data:data };
 		var request = $.ajax(args);
 		request.done(function(){
 			$('#newsletterbox').animate({'top':'-200%'},0,function(){
 				$('#newsletteroverlay').hide(0);
-				$('#newsletterboxclose').hide(0);
+				$('#newsletterboxclose,#newmobileboxclose').hide(0);
 			});			
 			$('#thanksoverlay').fadeIn(0,function(){
 				$('#thanksbox').animate({'top':'0px'},0);
 				$('#thanksclose').animate({'top':'50px'},0);
 			});
-			$('#thanksclose').click(function(){
+			$('#thanksclose,#newthanksclose').click(function(){
 				$('#thanksbox').animate({'top':'-200%'},0,function(){
 					$('#thanksoverlay').hide(0);
 					$('#thanksclose').hide(0);
