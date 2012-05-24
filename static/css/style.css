@@ -256,16 +256,20 @@ h1{
 }
 
 .abouttext{
-	position:fixed;
 	width:80%;
+	left:25%;
+	right:25%;
+	position:fixed;
 	text-align:left;
 	margin-left:auto;
 	margin-right:auto;
-	left:25%;
+	font-size:1.1em;
+	line-height: 1.5em;
 }
 
 a.boxclose{
 	position:relative;
+	opacity:.5;
 	right:40px;
 	padding-top:50px;
     width:100px;
@@ -339,6 +343,7 @@ a.newsletteractivator{
 
 a.newsletterboxclose{
 	position:fixed;
+	opacity:.5;
 	margin-top:30px;
     width:100px;
     height:100px;
@@ -427,6 +432,7 @@ p.topnav {
 
 .signup {
 	position:absolute;
+	opacity:.5;
 	width:80px;
 	height:80px;
 	border:none;
@@ -468,6 +474,7 @@ p.topnav {
 
 a.thanksclose {
 	position:fixed;
+	opacity:.5;
 	margin-top:10px;
 	margin-right:40px;
     width:100px;
@@ -492,13 +499,18 @@ a.thanksclose {
 input.signupinput {
 	color:#ffffff;
 	background:#000000;
-	border:none;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	border-bottom:none;
 	font-size:200%;
 	font-weight:bold;
 	text-align:left;
 	margin:0 auto;
 	size:15%;
+	outline:none;
 }
+
 
 .emailError {
 	border:red;
