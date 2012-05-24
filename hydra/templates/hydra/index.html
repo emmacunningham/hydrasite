@@ -123,12 +123,14 @@
 					<div class="signcol" style="margin-top:10px;margin-right:0px;">
 						<form name="myForm" action="" onsubmit="return validateEmail()" >
 						<input class="signupinput" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
+						<div id="nameerror" style="display:none;">Please enter your name!</div>
 					</div>
 					<div id="mobileonlyhacks">
 						<br><br><br>
 					</div>
 					<div class="signcol" style="margin-top:10px;">
 							<input class="signupinput" type="text" name="email" id="id_email" value="YOUR EMAIL" />
+							<div id="emailerror" style="display:none;">Please enter your email!</div>							
 					</div>
 					<div id="mobileonlyhacks">
 						<br><br><br>
@@ -352,13 +354,20 @@
 	function validateEmail()
 	{
 	var x=document.forms["myForm"]["email"].value;
+	var y=document.forms["myForm"]["firstname"].value;
 	var atpos=x.indexOf("@");
 	var dotpos=x.lastIndexOf(".");
 	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
 	  {
 		$('#id_email').css("border","1px solid red");
+		$('#emailerror').show();
 		return false;
 	  }
+	if ($('#id_firstname').val() == 'YOUR NAME') {
+		$('#id_firstname').css("border","1px solid red");
+		$('#emailerror').show();
+		return false;
+	}
 	else
 		{
 		var name = $("#id_firstname").val();
