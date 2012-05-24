@@ -534,6 +534,9 @@ input.signupinput {
 	min-height:50%;
 }
 
+#bg_mobile {
+	display:none;
+}
 
 .row .boxcol {
 	position:fixed;
