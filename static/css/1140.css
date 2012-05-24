@@ -833,7 +833,7 @@ img {
 	.row .subcol {
 	position:relative;
 	display:inline-block;
-	margin-right:0px;
+	margin:0 auto;
 	float:left;
 	width:5%;
 	}
@@ -860,8 +860,8 @@ img {
 
 	a.newmobileboxclose{
 		position:fixed;
-		right:20px;
-		top:200px;
+		left:50%;
+		top:195px;
 	    width:50px;
 	    height:50px;
 	    background:transparent url(../img/close.png) no-repeat center center;
