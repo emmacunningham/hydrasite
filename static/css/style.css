@@ -269,6 +269,7 @@ h1{
 
 a.boxclose{
 	position:relative;
+	opacity:.5;
 	right:40px;
 	padding-top:50px;
     width:100px;
@@ -342,6 +343,7 @@ a.newsletteractivator{
 
 a.newsletterboxclose{
 	position:fixed;
+	opacity:.5;
 	margin-top:30px;
     width:100px;
     height:100px;
@@ -430,6 +432,7 @@ p.topnav {
 
 .signup {
 	position:absolute;
+	opacity:.5;
 	width:80px;
 	height:80px;
 	border:none;
@@ -471,6 +474,7 @@ p.topnav {
 
 a.thanksclose {
 	position:fixed;
+	opacity:.5;
 	margin-top:10px;
 	margin-right:40px;
     width:100px;
