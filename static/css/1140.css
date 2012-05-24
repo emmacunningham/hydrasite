@@ -524,6 +524,7 @@ img {
 	
 	.signup {
 	margin-left:0;
+	opacity:1.0;
 	}
 	
 	#signrow {
@@ -593,19 +594,7 @@ img {
 	}
 
 	a.thanksclose{
-		position:fixed;
-		right:20px;
-		top:200px;
-	    width:50px;
-	    height:50px;
-	    background:transparent url(../img/close.png) no-repeat center center;
-		background-size:100%;
-	    cursor:pointer;
-	    z-index:102;
-		display:inline-block;
-		/* For IE 7 */
-		zoom: 1;
-		*display: inline;
+		display:none;
 	}
 
 
@@ -816,6 +805,7 @@ img {
 	
 	.signup {
 	margin-left:0;
+	opacity:1.0;
 	}
 	
 	#signrow {
@@ -883,8 +873,8 @@ img {
 		zoom: 1;
 		*display: inline;
 	}
-
-	a.thanksclose{
+	
+	a.mobilethanksclose{
 		position:fixed;
 		right:20px;
 		top:200px;
@@ -900,6 +890,10 @@ img {
 		*display: inline;
 	}
 
+	a.thanksclose{
+		display:none;
+	}
+
 
 	a.boxclose,#boxclose {
 		display:none;
@@ -909,8 +903,11 @@ img {
 		position:absolute;
 		display:inline;
 		left:0;
+		opacity:1.0;
 
 	}
+	
+	
 
 }
 

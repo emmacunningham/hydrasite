@@ -143,7 +143,7 @@
 					</div>
 					<div class="boxcol" id="newboxcol">
 						<a class="newsletterboxclose" id="newsletterboxclose"></a>
-						<a class="newmobileboxclose" id="newmobileboxclose" style="align:right;"></a>
+						<a class="newmobileboxclose" id="newmobileboxclose" style="align:right;display:none;"></a>
 					</div>
 				</div>
 			</div>
@@ -161,6 +161,7 @@
 						</div>
 						<div class="thankscol">
 							<a class="thanksclose" id="thanksclose"></a>
+							<a class="mobilethanksclose" id="mobilethanksclose" style="align:right;display:none;"></a>
 						</div>
 					</div>
 				</div>
@@ -405,11 +406,13 @@
 			$('#thanksoverlay').fadeIn(0,function(){
 				$('#thanksbox').animate({'top':'0px'},0);
 				$('#thanksclose').animate({'top':'50px'},0);
+				$('#mobilethanksclose').show(0);
 			});
-			$('#thanksclose,#newthanksclose').click(function(){
+			$('#thanksclose,#mobilethanksclose').click(function(){
 				$('#thanksbox').animate({'top':'-200%'},0,function(){
 					$('#thanksoverlay').hide(0);
 					$('#thanksclose').hide(0);
+					$('#mobilethanksclose').hide(0);
 				});
 			});
 		});
