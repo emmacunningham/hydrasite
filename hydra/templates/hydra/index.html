@@ -306,6 +306,24 @@
 	});
 	</script>
 	
+	<script type="text/javascript">
+	$(function() {
+		$('#id_firstname').focus(function(){
+			$(this).css("border-bottom", "thin solid #ffffff")
+		});
+		$('#id_firstname').focusout(function(){
+			$(this).css("border-bottom", "none")
+		});
+		$('#id_email').focus(function(){
+			$(this).css("border-bottom", "thin solid #ffffff")
+		});
+		$('#id_email').focusout(function(){
+			$(this).css("border-bottom", "none")
+		});
+	});
+	</script>
+	
+
 	<script>
 		
 	    $("#id_firstname").keyup(function () {

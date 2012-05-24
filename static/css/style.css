@@ -499,7 +499,10 @@ a.thanksclose {
 input.signupinput {
 	color:#ffffff;
 	background:#000000;
-	border:none;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	border-bottom:none;
 	font-size:200%;
 	font-weight:bold;
 	text-align:left;
