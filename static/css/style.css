@@ -505,7 +505,9 @@ input.signupinput {
 	text-align:left;
 	margin:0 auto;
 	size:15%;
+	outline:none;
 }
+
 
 .emailError {
 	border:red;
