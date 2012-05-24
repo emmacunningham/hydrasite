@@ -295,12 +295,13 @@
 				$('#id_firstname').focus();
 				$('#newsletterboxclose').show(0);
 				$('#newmobileboxclose').show(0);
+				$('#signup').show(0);
 			});
 		});
 		$('#newsletterboxclose,#newmobileboxclose').click(function(){
 			$('#newsletterbox').animate({'top':'-200%'},500,function(){
 				$('#newsletteroverlay').fadeOut(0);
-				$('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
+				$('#newsletterboxclose,#newmobileboxclose,#signup').fadeOut(0);
 			});
 		});
 
@@ -412,7 +413,7 @@
 				$('#thanksbox').animate({'top':'-200%'},0,function(){
 					$('#thanksoverlay').hide(0);
 					$('#thanksclose').hide(0);
-					$('#mobilethanksclose').hide(0);
+					$('#mobilethanksclose,#signup').hide(0);
 				});
 			});
 		});
