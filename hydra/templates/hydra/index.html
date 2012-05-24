@@ -274,15 +274,15 @@
 	<script type="text/javascript">
 	$(function() {
 		$('#newsletteractivator,#nnewsletteractivator').click(function(){
-			$('#newsletteroverlay').fadeIn('fast',function(){
-				$('#newsletterbox').animate({'top':'0px'},0);
+			$('#newsletteroverlay').animate({'top':'0px'},0,function(){
+				$('#newsletterbox').animate({'top':'0px'},200);
 				$('#id_firstname').focus();
 				$('#newsletterboxclose').show(0);
 				$('#newmobileboxclose').show(0);
 			});
 		});
 		$('#newsletterboxclose,#newmobileboxclose').click(function(){
-			$('#newsletterbox').animate({'top':'-200%'},0,function(){
+			$('#newsletterbox').animate({'top':'-200%'},500,function(){
 				$('#newsletteroverlay').fadeOut(0);
 				$('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
 			});
