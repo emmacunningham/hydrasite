@@ -474,9 +474,10 @@ p.topnav {
 
 a.thanksclose {
 	position:fixed;
+	right:0;
 	opacity:.5;
 	margin-top:10px;
-	margin-right:40px;
+	margin-right:50px;
     width:100px;
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
