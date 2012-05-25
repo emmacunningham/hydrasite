@@ -329,6 +329,27 @@
 	</script>
 	
 	<script type="text/javascript">
+	$(document).keyup(function(e) {
+	  if (e.keyCode == 27) { 
+			$('#aboutbox').animate({'top':'-200%'},0,function(){
+				$('#aboutoverlay').fadeOut('fast');
+				$('#footer').show(0);
+				$('#mobilemain').show(0);
+			});
+			$('#newsletterbox').animate({'top':'-200%'},500,function(){
+				$('#newsletteroverlay').fadeOut(0);
+				$('#newsletterboxclose,#newmobileboxclose,#signup').fadeOut(0);
+			});
+			$('#thanksbox').animate({'top':'-200%'},0,function(){
+				$('#thanksoverlay').hide(0);
+				$('#thanksclose').hide(0);
+				$('#mobilethanksclose,#signup').hide(0);
+			});			
+		}   
+	});
+	</script>
+	
+	<script type="text/javascript">
 	$(function() {
 		$('#newsletteractivator,#nnewsletteractivator').click(function(){
 			$('#newsletteroverlay').animate({'top':'0px'},0,function(){
