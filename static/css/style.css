@@ -488,6 +488,7 @@ a.thanksclose {
 }
 
 
+
 .lightgrey {
 	color:#9e9e9e;
 }
@@ -614,7 +615,7 @@ input.signupinput {
 }
 
 #thanksrow {
-	margin-left:20%;
+	margin-left:0;
 }
 
 #fallback {
