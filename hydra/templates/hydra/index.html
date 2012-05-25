@@ -37,6 +37,7 @@
 	<!-- TypeKit script -->
 	<script type="text/javascript" src="http://use.typekit.com/kcq7fyc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 	
 </head>
 <body>
@@ -187,14 +188,26 @@
 
 		<!-- html5 background video -->
 		<div id="bg_video">
-		<video autoplay="true" loop="true">
+		<video id="bg_intro">
 			<!-- if Firefox/Chrome -->  
-			<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
+			<source src="{{ STATIC_URL }}img/bg_intro.webm" type="video/webm">
 			<!-- if Safari -->  
-			<source src="{{ STATIC_URL }}img/bg.mp4" type="video/mp4">
+			<source src="{{ STATIC_URL }}img/bg_intro.mp4" type="video/mp4">
 			<!-- everybody else -->  
 			<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;">
 		</video>
+		
+		
+		<video id="bg_loop" style="display:none;">
+			<!-- if Firefox/Chrome -->  
+			<source src="{{ STATIC_URL }}img/bg_loop.webm" type="video/webm">
+			<!-- if Safari -->  
+			<source src="{{ STATIC_URL }}img/bg_loop.mp4" type="video/mp4">
+			<!-- everybody else -->  
+			<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;">
+		</video> 
+	
+		
 		</div>
 		
 	</div>	
@@ -228,6 +241,7 @@
 	<!-- scripts concatenated and minified via build script -->
 	<script src="{{ STATIC_URL }}js/plugins.js"></script>
 	<script src="{{ STATIC_URL }}js/script.js"></script>
+	<script src="{{ STATIC_URL }}js/html5Preloader.0.61.js"></script>
 	<!-- end scripts -->
 
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
@@ -238,6 +252,29 @@
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
+	
+	
+	<script type="text/javascript">
+		var myLoader = html5Preloader();
+		myLoader.addFiles('{{ STATIC_URL }}img/bg_intro.mp4');
+		var video =  document.getElementById('bg_intro');
+		var loop = document.getElementById('bg_loop');
+
+
+		video.addEventListener('ended',beginloop,false);
+		video.play();
+
+		function beginloop(e) {
+			if(!e) { e = window.event; }
+			video.src = "{{ STATIC_URL }}img/bg_loop.mp4"
+			video.loop = true;
+			video.play();
+		}
+
+	</script>
+
+
+	
 	<script type="text/javascript">
 	$(function() {
 		$('#aboutactivator').click(function(){
