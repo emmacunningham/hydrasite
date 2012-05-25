@@ -632,6 +632,10 @@ input.signupinput {
 	left: 0;
 }
 
+.formerror {
+	padding-top:10px;
+}
+
 #mobileonlyhacks {
 	display:none;
 }
