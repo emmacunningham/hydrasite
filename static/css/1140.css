@@ -225,7 +225,6 @@ img {
 	a.thanksclose {
 	position:relative;
 	display:block;
-	margin-left:30%;
 	}
 	
 
@@ -330,7 +329,7 @@ img {
 }
 
 
-/* Mobile */
+/* Tablet */
 
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
@@ -646,7 +645,7 @@ img {
 	}
 }
 
-
+/* Mobile */
 @media only screen and (min-device-width: 320px) and (max-device-width:480px) {
 	
 	.row {

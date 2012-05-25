@@ -124,14 +124,14 @@
 					<div class="signcol" style="margin-top:10px;margin-right:0px;">
 						<form name="myForm" action="" onsubmit="return validateEmail()" >
 						<input class="signupinput" type="text" name="firstname" id="id_firstname" value="YOUR NAME" />
-						<div id="nameerror" style="display:none;">Please enter your first name.</div>
+						<div class="formerror" id="nameerror" style="display:none;">Please enter your first name.</div>
 					</div>
 					<div id="mobileonlyhacks">
 						<br /><br /><br />
 					</div>
 					<div class="signcol" style="margin-top:10px;">
 							<input class="signupinput" type="text" name="email" id="id_email" value="YOUR EMAIL" />
-							<div id="emailerror" style="display:none;">Please enter a valid email address.</div>							
+							<div class="formerror" id="emailerror" style="display:none;">Please enter a valid email address.</div>							
 					</div>
 					<div id="mobileonlyhacks">
 						<br /><br /><br />
@@ -329,6 +329,27 @@
 	</script>
 	
 	<script type="text/javascript">
+	$(document).keyup(function(e) {
+	  if (e.keyCode == 27) { 
+			$('#aboutbox').animate({'top':'-200%'},0,function(){
+				$('#aboutoverlay').fadeOut('fast');
+				$('#footer').show(0);
+				$('#mobilemain').show(0);
+			});
+			$('#newsletterbox').animate({'top':'-200%'},500,function(){
+				$('#newsletteroverlay').fadeOut(0);
+				$('#newsletterboxclose,#newmobileboxclose,#signup').fadeOut(0);
+			});
+			$('#thanksbox').animate({'top':'-200%'},0,function(){
+				$('#thanksoverlay').hide(0);
+				$('#thanksclose').hide(0);
+				$('#mobilethanksclose,#signup').hide(0);
+			});			
+		}   
+	});
+	</script>
+	
+	<script type="text/javascript">
 	$(function() {
 		$('#newsletteractivator,#nnewsletteractivator').click(function(){
 			$('#newsletteroverlay').animate({'top':'0px'},0,function(){
@@ -418,18 +439,18 @@
 	var dotpos=x.lastIndexOf(".");
 	var str = $.trim($('#id_firstname').val());	
 	if ($('#id_firstname').val() == 'YOUR NAME') {
-		$('#id_firstname').css("border","1px solid red");
+		$('#id_firstname').css("border-bottom","1px solid red");
 		$('#nameerror').show();
 		return false;
 	}
 	if (str == '') {
-		$('#id_firstname').css("border","1px solid red");
+		$('#id_firstname').css("border-bottom","1px solid red");
 		$('#nameerror').show();
 		return false;
 	}
 	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
 	  {
-		$('#id_email').css("border","1px solid red");
+		$('#id_email').css("border-bottom","1px solid red");
 		$('#emailerror').show();
 		return false;
 	  }
@@ -441,11 +462,11 @@
 		var args = { type:"POST", url:"/", data:data };
 		var request = $.ajax(args);
 		request.done(function(){
-			$('#newsletterbox').animate({'top':'-200%'},0,function(){
-				$('#newsletteroverlay').hide(0);
-				$('#newsletterboxclose,#newmobileboxclose').hide(0);
+			$('#newsletterbox').fadeOut(300,function(){
+				$('#newsletteroverlay').fadeOut(0);
+				$('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
 			});			
-			$('#thanksoverlay').fadeIn(0,function(){
+			$('#thanksoverlay').fadeIn(400,function(){
 				$('#thanksbox').animate({'top':'0px'},0);
 				$('#thanksclose').animate({'top':'50px'},0);
 				$('#mobilethanksclose').show(0);

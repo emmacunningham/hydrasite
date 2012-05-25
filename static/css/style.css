@@ -464,6 +464,7 @@ p.topnav {
 	left:0;
     top:-200%;
 	width:100%;
+	height:28px;
     background: #000000;
     color:#ffffff;
 	font-size:4em;
@@ -474,9 +475,10 @@ p.topnav {
 
 a.thanksclose {
 	position:fixed;
+	right:0;
 	opacity:.5;
 	margin-top:10px;
-	margin-right:40px;
+	margin-right:50px;
     width:100px;
     height:100px;
     background:transparent url(../img/close.png) no-repeat top right;
@@ -486,6 +488,7 @@ a.thanksclose {
 	zoom: 1;
 	*display: inline;
 }
+
 
 
 .lightgrey {
@@ -614,7 +617,7 @@ input.signupinput {
 }
 
 #thanksrow {
-	margin-left:20%;
+	margin-left:0;
 }
 
 #fallback {
@@ -630,6 +633,10 @@ input.signupinput {
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+
+.formerror {
+	padding-top:10px;
 }
 
 #mobileonlyhacks {
