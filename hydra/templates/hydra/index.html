@@ -418,18 +418,18 @@
 	var dotpos=x.lastIndexOf(".");
 	var str = $.trim($('#id_firstname').val());	
 	if ($('#id_firstname').val() == 'YOUR NAME') {
-		$('#id_firstname').css("border","1px solid red");
+		$('#id_firstname').css("border-bottom","1px solid red");
 		$('#nameerror').show();
 		return false;
 	}
 	if (str == '') {
-		$('#id_firstname').css("border","1px solid red");
+		$('#id_firstname').css("border-bottom","1px solid red");
 		$('#nameerror').show();
 		return false;
 	}
 	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
 	  {
-		$('#id_email').css("border","1px solid red");
+		$('#id_email').css("border-bottom","1px solid red");
 		$('#emailerror').show();
 		return false;
 	  }
