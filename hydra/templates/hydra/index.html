@@ -441,11 +441,11 @@
 		var args = { type:"POST", url:"/", data:data };
 		var request = $.ajax(args);
 		request.done(function(){
-			$('#newsletterbox').animate({'top':'-200%'},0,function(){
-				$('#newsletteroverlay').hide(0);
-				$('#newsletterboxclose,#newmobileboxclose').hide(0);
+			$('#newsletterbox').fadeOut(300,function(){
+				$('#newsletteroverlay').fadeOut(0);
+				$('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
 			});			
-			$('#thanksoverlay').fadeIn(0,function(){
+			$('#thanksoverlay').fadeIn(400,function(){
 				$('#thanksbox').animate({'top':'0px'},0);
 				$('#thanksclose').animate({'top':'50px'},0);
 				$('#mobilethanksclose').show(0);
