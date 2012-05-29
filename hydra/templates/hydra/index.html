@@ -198,7 +198,7 @@
 			<!-- if Firefox/Chrome -->  
 			<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
 			<!-- if Safari -->  
-			<source src="{{ STATIC_URL }}img/bg_intro.mp4" type="video/mp4">
+			<source src="{{ STATIC_URL }}img/bg2.mp4" type="video/mp4">
 			<!-- everybody else -->  
 			<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;">
 		</video>
@@ -237,6 +237,8 @@
 	<script src="{{ STATIC_URL }}js/plugins.js"></script>
 	<script src="{{ STATIC_URL }}js/script.js"></script>
 	<script src="{{ STATIC_URL }}js/html5Preloader.0.61.js"></script>
+	<script src="{{ STATIC_URL }}js/spin.js"></script>
+	
 	<!-- end scripts -->
 
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
@@ -258,6 +260,7 @@
 		function loading(e) {
 			if(!e) { e = window.event; }
 			$('#spinner').show();
+			$('#bg_video').css('background-color', '#9e9e9e');
 		}
 		
 		function loaded(e) {
@@ -271,19 +274,19 @@
 	
 	<script type="text/javascript">
 		var myLoader = html5Preloader();
-		myLoader.addFiles('{{ STATIC_URL }}img/bg_intro.mp4');
+		myLoader.addFiles('{{ STATIC_URL }}img/bg.webm','{{ STATIC_URL }}img/bg2.mp4','{{ STATIC_URL }}img/bg_fallback.jpg');
 		var video =  document.getElementById('bg_vid');
 
 		video.play();
 		
 		video.addEventListener("timeupdate", function() {
-		if (video.currentTime > 5) {
+		if (video.currentTime > 10.02) {
 			
 		}}, false);
 
 		video.addEventListener("ended", function() {
 		if (video.ended = 'true') {
-			video.currentTime = 6;
+			video.currentTime = 10.03;
 			video.play();
 		}
 		}, false);
