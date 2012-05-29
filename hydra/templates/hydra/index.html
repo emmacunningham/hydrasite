@@ -61,6 +61,12 @@
 
 	<div role="main">
 
+		<div id="spinner" class="spinner" style="display:none;">
+		
+		    <img id="img-spinner" src="{{ STATIC_URL }}img/loader.gif" alt="Loading"/>
+		
+		</div>
+		
 		
 		<!-- about overlay -->
 		<div class="aboutoverlay" id="aboutoverlay" style="display:none;">
@@ -255,6 +261,28 @@
 	
 	
 	<script type="text/javascript">
+		var intro = $('#bg_intro').get(0);
+		var loop = $('#bg_loop').get(1);
+
+		intro.addEventListener('loadstart',loading,false);		
+		intro.addEventListener('canplaythrough',startplay,false);
+		
+		function loading(e) {
+			if(!e) { e = $('#spinner').show(); }
+			$('#body').css('background','#cfcfcf');
+			$('#spinner').show();
+		}
+
+		function startplay(e) {
+			if(!e) { e = $('#spinner').show(); }
+			$('#spinner').hide();
+		}
+
+
+	</script>
+	
+	<!-- 
+	<script type="text/javascript">
 		var myLoader = html5Preloader();
 		myLoader.addFiles('{{ STATIC_URL }}img/bg_intro.mp4');
 		var video =  document.getElementById('bg_intro');
@@ -272,6 +300,8 @@
 		}
 
 	</script>
+	-->
+	
 
 
 	
