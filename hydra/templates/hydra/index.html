@@ -248,19 +248,25 @@
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 	
-	<!--
+	
 	<script type="text/javascript">
 		var video = $('#bg_vid').get(0);
 
 		video.addEventListener('loadstart',loading,false);		
+		video.addEventListener('canplaythrough',loaded,false);		
 		
 		function loading(e) {
 			if(!e) { e = window.event; }
 			$('#spinner').show();
 		}
+		
+		function loaded(e) {
+			if(!e) { e = window.event; }
+			$('#spinner').hide();
+		}
 
 	</script>
-	-->
+	
 	
 	
 	<script type="text/javascript">
@@ -280,8 +286,6 @@
 			video.currentTime = 6;
 			video.play();
 		}
-		
-
 		}, false);
 
 		
