@@ -194,25 +194,14 @@
 
 		<!-- html5 background video -->
 		<div id="bg_video">
-		<video id="bg_intro">
+		<video id="bg_vid" autoplay="false">
 			<!-- if Firefox/Chrome -->  
-			<source src="{{ STATIC_URL }}img/bg_intro.webm" type="video/webm">
+			<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
 			<!-- if Safari -->  
 			<source src="{{ STATIC_URL }}img/bg_intro.mp4" type="video/mp4">
 			<!-- everybody else -->  
 			<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;">
 		</video>
-		
-		
-		<video id="bg_loop" style="display:none;">
-			<!-- if Firefox/Chrome -->  
-			<source src="{{ STATIC_URL }}img/bg_loop.webm" type="video/webm">
-			<!-- if Safari -->  
-			<source src="{{ STATIC_URL }}img/bg_loop.mp4" type="video/mp4">
-			<!-- everybody else -->  
-			<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;">
-		</video> 
-	
 		
 		</div>
 		
@@ -259,48 +248,45 @@
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 	
-	
+	<!--
 	<script type="text/javascript">
-		var intro = $('#bg_intro').get(0);
-		var loop = $('#bg_loop').get(1);
+		var video = $('#bg_vid').get(0);
 
-		intro.addEventListener('loadstart',loading,false);		
-		intro.addEventListener('canplaythrough',startplay,false);
+		video.addEventListener('loadstart',loading,false);		
 		
 		function loading(e) {
-			if(!e) { e = $('#spinner').show(); }
-			$('#body').css('background','#cfcfcf');
-			$('#spinner').show();
-		}
-
-		function startplay(e) {
-			if(!e) { e = $('#spinner').show(); }
-			$('#spinner').hide();
-		}
-
-
-	</script>
-	
-	<!-- 
-	<script type="text/javascript">
-		var myLoader = html5Preloader();
-		myLoader.addFiles('{{ STATIC_URL }}img/bg_intro.mp4');
-		var video =  document.getElementById('bg_intro');
-		var loop = document.getElementById('bg_loop');
-
-
-		video.addEventListener('ended',beginloop,false);
-		video.play();
-
-		function beginloop(e) {
 			if(!e) { e = window.event; }
-			video.src = "{{ STATIC_URL }}img/bg_loop.mp4"
-			video.loop = true;
-			video.play();
+			$('#spinner').show();
 		}
 
 	</script>
 	-->
+	
+	
+	<script type="text/javascript">
+		var myLoader = html5Preloader();
+		myLoader.addFiles('{{ STATIC_URL }}img/bg_intro.mp4');
+		var video =  document.getElementById('bg_vid');
+
+		video.play();
+		
+		video.addEventListener("timeupdate", function() {
+		if (video.currentTime > 5) {
+			
+		}}, false);
+
+		video.addEventListener("ended", function() {
+		if (video.ended = 'true') {
+			video.currentTime = 6;
+			video.play();
+		}
+		
+
+		}, false);
+
+		
+	</script>
+
 	
 
 
