@@ -57,6 +57,28 @@
 	</header>
 
 
+	<!-- html5 background video -->
+	<div id="bg_video">
+	<video id="bg_vid" autoplay="false">
+		<!-- if Firefox/Chrome -->  
+		<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
+		<!-- if Safari -->  
+		<source src="{{ STATIC_URL }}img/bg2.mp4" type="video/mp4">
+		<!-- if IE -->
+		
+
+		<embed id="flashfallback" src="{{ STATIC_URL }}img/bg2.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque">
+			
+		</embed>  				
+
+	
+		<!-- everybody else -->  
+		
+		<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;z-index:-5;">
+	</video>
+	
+	</div>
+
 
 
 	<div role="main">
@@ -192,21 +214,9 @@
 			</div>
 			</div>
 
-		<!-- html5 background video -->
-		<div id="bg_video">
-		<video id="bg_vid" autoplay="false">
-			<!-- if Firefox/Chrome -->  
-			<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
-			<!-- if Safari -->  
-			<source src="{{ STATIC_URL }}img/bg2.mp4" type="video/mp4">
-			<!-- everybody else -->  
-			<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;">
-		</video>
 		
-		</div>
 		
-	</div>	
-
+	</div>
 
 	<footer id="footer">
 		<div class="container">
@@ -228,6 +238,7 @@
 
 
 	<!-- JavaScript at the bottom for fast page loading -->
+	
 
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -274,15 +285,10 @@
 	
 	<script type="text/javascript">
 		var myLoader = html5Preloader();
-		myLoader.addFiles('{{ STATIC_URL }}img/bg.webm','{{ STATIC_URL }}img/bg2.mp4','{{ STATIC_URL }}img/bg_fallback.jpg');
+		myLoader.addFiles('{{ STATIC_URL }}img/bg.webm','{{ STATIC_URL }}img/bg2.mp4','{{ STATIC_URL }}img/bg_fallback.jpg','{{ STATIC_URL }}img/bg2.swf');
 		var video =  document.getElementById('bg_vid');
 
 		video.play();
-		
-		video.addEventListener("timeupdate", function() {
-		if (video.currentTime > 10.02) {
-			
-		}}, false);
 
 		video.addEventListener("ended", function() {
 		if (video.ended = 'true') {
@@ -293,8 +299,6 @@
 
 		
 	</script>
-
-	
 
 
 	

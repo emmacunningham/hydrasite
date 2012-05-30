@@ -520,11 +520,12 @@ input.signupinput {
 }
 
 #bg_video {
-	position:fixed;
+	position:absolute;
 	top:-50%;
 	left:-50%;
 	width:200%;
 	height:200%;
+	z-index:-1;
 }
 #bg_video video {
 	position:absolute;
@@ -626,8 +627,8 @@ input.signupinput {
 	min-width: 1024px;
 
 	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 100%;
 
 	/* Set up positioning */
 	position: fixed;
@@ -641,6 +642,13 @@ input.signupinput {
 
 #mobileonlyhacks {
 	display:none;
+}
+
+#flashfallback {
+
+	width:100%; 
+	height:100%;
+
 }
 
 /* spinner */
