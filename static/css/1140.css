@@ -122,7 +122,9 @@ img {
 	*display: inline;
 	}
 	
-	
+	h1 {
+	font-size:4em;
+	}
 
 
 }
@@ -143,6 +145,14 @@ img {
 	
 	header {
 	display:none;
+	}
+	
+	h1 {
+	font-size:4em;
+	}
+	
+	#aboutsinglecol {
+	font-size:1em;
 	}
 	
 	#footercontact {
