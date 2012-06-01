@@ -140,7 +140,11 @@ img {
 	
 	body {
 	font-size: 1em;
-	background: transparent url(../img/mobile_bg.jpg);
+	background: transparent url(../img/bg_fallback.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	}
 	
 	header {
@@ -171,28 +175,9 @@ img {
 	display:none;
 	}
 	
-	#bg_mobile {
-		position:fixed;
-		top:-50%;
-		left:-50%;
-		width:200%;
-		height:200%;
-		display:inline;
-		z-index:-10;
-		
+	#fallback {
+	display:none;
 	}
-	#bg_mobile img {
-		position:absolute;
-		top:0;
-		left:0;
-		right:0;
-		bottom:0;
-		margin:auto;
-		min-width:50%;
-		min-height:50%;
-		display:inline;
-	}
-	
 	
 	.singlecol{
 	display:block;
@@ -376,31 +361,12 @@ img {
 	
 	body {
 	font-size: .75em;
-	background: transparent;
-	background-size:contain;
+	background: transparent url(../img/bg_fallback.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	}
-	
-	#bg_mobile {
-		position:fixed;
-		top:-50%;
-		left:-50%;
-		width:200%;
-		height:200%;
-		display:inline;
-		z-index:-10;
-	}
-	#bg_mobile img {
-		position:absolute;
-		top:0;
-		left:0;
-		right:0;
-		bottom:0;
-		margin:auto;
-		min-width:50%;
-		min-height:50%;
-		display:inline;
-	}
-	
 	
 	#mobilemain {
 	font-size:.4em;
@@ -676,6 +642,15 @@ img {
 	.aboutbox {
 	padding-top:100px;
 	}
+	
+	body {
+	background: transparent url(../img/bg_fallback.jpg) no-repeat center center fixed;
+	-webkit-background-size: auto 100%;
+	-moz-background-size: auto 100%;
+	-o-background-size: auto 100%;
+	background-size: auto 100%;
+	}
+	
 }
 
 /* Mobile */
@@ -689,31 +664,16 @@ img {
 	
 	body {
 	font-size: .75em;
-	background: transparent url(../img/mobile_bg.jpg);
+	background: transparent url(../img/bg_fallback.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	}
 	
-	#bg_mobile {
-		position:fixed;
-		top:-50%;
-		left:-50%;
-		width:200%;
-		height:200%;
-		display:inline;
-		z-index:-10;
+	#fallback {
+		display:none;
 	}
-	#bg_mobile img {
-		position:absolute;
-		top:0;
-		left:0;
-		right:0;
-		bottom:0;
-		margin:auto;
-		min-width:50%;
-		min-height:50%;
-		display:inline;
-	}
-	
-	
 	
 	#mobilemain {
 	font-size:.4em;

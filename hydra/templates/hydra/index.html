@@ -199,9 +199,6 @@
 			</div>
 	
  		<!-- main singlecol -->
-			<div id="bg_mobile">
-			<img src="{{ STATIC_URL }}img/bg_fallback.jpg">
-			</div>
 			<div class="singlecol" id="logo">
 				<img src="{{ STATIC_URL }}img/logo.png">
 			</div>
@@ -285,9 +282,10 @@
 	
 	<script type="text/javascript">
 	$(window).resize(function() {
-	  $('#bg_video').hide(0);
-	  $('#bg_video').show(0);
+		$('#bg_video').hide(0);
+		$('#bg_video').show(0);
 	});
+	
 	</script>
 	
 	<script type="text/javascript">
