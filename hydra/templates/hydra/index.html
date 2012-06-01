@@ -59,8 +59,6 @@
 
 	<!-- html5 background video -->
 	<div id="bg_video">
-	
-
 	<video id="bg_vid" autoplay="false">
 
 	
@@ -219,9 +217,7 @@
 			</div>
 
 		
-		
 	</div>
-
 
 
 	<footer id="footer">
@@ -267,11 +263,7 @@
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 	
-	<script type="text/javascript"> 
 
-	</script>
-	
-	
 	<script type="text/javascript">
 		var video = $('#bg_vid').get(0);
 
@@ -291,7 +283,12 @@
 
 	</script>
 	
-	
+	<script type="text/javascript">
+	$(window).resize(function() {
+	  $('#bg_video').hide(0);
+	  $('#bg_video').show(0);
+	});
+	</script>
 	
 	<script type="text/javascript">
 		var myLoader = html5Preloader();

@@ -372,7 +372,6 @@ a.newsletterboxclose{
 	position:fixed;
 	bottom:2%;
 	margin-top:3%;
-	
 }
 
 #header {
@@ -527,6 +526,7 @@ input.signupinput {
 	height:200%;
 	z-index:-1;
 }
+
 #bg_video video {
 	position:absolute;
 	top:0;
@@ -650,6 +650,8 @@ input.signupinput {
 	height:100%;
 
 }
+
+
 
 /* spinner */
 
