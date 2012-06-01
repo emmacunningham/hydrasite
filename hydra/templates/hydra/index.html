@@ -59,7 +59,11 @@
 
 	<!-- html5 background video -->
 	<div id="bg_video">
+	
+
 	<video id="bg_vid" autoplay="false">
+
+	
 		<!-- if Firefox/Chrome -->  
 		<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
 		<!-- if Safari -->  
@@ -73,9 +77,11 @@
 		<!-- everybody else -->  
 		
 		<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;z-index:-5;">
+
 	</video>
-	
+
 	</div>
+
 
 
 
@@ -261,6 +267,10 @@
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 	
+	<script type="text/javascript"> 
+
+	</script>
+	
 	
 	<script type="text/javascript">
 		var video = $('#bg_vid').get(0);
@@ -287,7 +297,10 @@
 		var myLoader = html5Preloader();
 		myLoader.addFiles('bg_vid*:{{ STATIC_URL }}img/bg.webm||{{ STATIC_URL }}img/bg.mp4||{{ STATIC_URL }}img/bg2.swf||{{ STATIC_URL }}img/bg_fallback.jpg');
 		var video =  document.getElementById('bg_vid');
-
+		$('#bg_vid').bind('contextmenu', function() 
+		    {
+		        return false;
+		    });
 		video.play();
 
 		video.addEventListener("ended", function() {
@@ -297,7 +310,6 @@
 		}
 		}, false);
 
-		
 	</script>
 
 
