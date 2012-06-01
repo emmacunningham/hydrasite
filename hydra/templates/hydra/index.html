@@ -60,6 +60,8 @@
 	<!-- html5 background video -->
 	<div id="bg_video">
 	<video id="bg_vid" autoplay="false">
+
+	
 		<!-- if Firefox/Chrome -->  
 		<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
 		<!-- if Safari -->  
@@ -73,9 +75,11 @@
 		<!-- everybody else -->  
 		
 		<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;z-index:-5;">
+
 	</video>
-	
+
 	</div>
+
 
 
 
@@ -116,10 +120,10 @@
 				<div class="row">
 					<div class="abouttext">
 					<div class="fourcol" style="margin-right:10px;">
-						{{ aboutleft }}
+						{{ aboutleft|linebreaksbr }}
 					</div>
 					<div class="fourcol" style="margin-left:10px;">
-						{{ aboutright }}
+						{{ aboutright|linebreaksbr }}
 					</div>
 					</div>
 				</div>
@@ -195,9 +199,6 @@
 			</div>
 	
  		<!-- main singlecol -->
-			<div id="bg_mobile">
-			<img src="{{ STATIC_URL }}img/bg_fallback.jpg">
-			</div>
 			<div class="singlecol" id="logo">
 				<img src="{{ STATIC_URL }}img/logo.png">
 			</div>
@@ -213,9 +214,7 @@
 			</div>
 
 		
-		
 	</div>
-
 
 
 	<footer id="footer">
@@ -261,7 +260,7 @@
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 	
-	
+
 	<script type="text/javascript">
 		var video = $('#bg_vid').get(0);
 
@@ -281,13 +280,31 @@
 
 	</script>
 	
-	
+	<script type="text/javascript">
+	var userAgent = navigator.userAgent.toLowerCase(); 
+	$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
+
+	// Is this a version of Chrome?
+	if($.browser.chrome){
+	  userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
+	  userAgent = userAgent.substring(0,userAgent.indexOf('.'));
+	  $.browser.version = userAgent;
+	  $.browser.safari = false;
+		$(window).resize(function() {
+		$('#bg_video').hide(0);
+		$('#bg_video').show(0);
+	});
+	}
+	</script>
 	
 	<script type="text/javascript">
 		var myLoader = html5Preloader();
 		myLoader.addFiles('bg_vid*:{{ STATIC_URL }}img/bg.webm||{{ STATIC_URL }}img/bg.mp4||{{ STATIC_URL }}img/bg2.swf||{{ STATIC_URL }}img/bg_fallback.jpg');
 		var video =  document.getElementById('bg_vid');
-
+		$('#bg_vid').bind('contextmenu', function() 
+		    {
+		        return false;
+		    });
 		video.play();
 
 		video.addEventListener("ended", function() {
@@ -297,7 +314,6 @@
 		}
 		}, false);
 
-		
 	</script>
 
 
