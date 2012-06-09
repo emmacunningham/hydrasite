@@ -59,24 +59,12 @@
 
 	<!-- html5 background video -->
 	<div id="bg_video">
-	<video id="bg_vid" autoplay="false">
+    <video id="bg_vid" autoplay="false">
+      
 
-	
-		<!-- if Firefox/Chrome -->  
-		<source src="{{ STATIC_URL }}img/bg.webm" type="video/webm">
-		<!-- if Safari -->  
-		<source src="{{ STATIC_URL }}img/bg2.mp4" type="video/mp4">
-		<!-- if IE -->
-		<embed id="flashfallback" src="{{ STATIC_URL }}img/bg2.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque">
-			
-		</embed>  				
 
-	
-		<!-- everybody else -->  
-		
-		<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;z-index:-5;">
-
-	</video>
+    	
+    </video>
 
 	</div>
 
@@ -300,20 +288,48 @@
 	<script type="text/javascript">
 		var myLoader = html5Preloader();
 		myLoader.addFiles('bg_vid*:{{ STATIC_URL }}img/bg.webm||{{ STATIC_URL }}img/bg.mp4||{{ STATIC_URL }}img/bg2.swf||{{ STATIC_URL }}img/bg_fallback.jpg');
-		var video =  document.getElementById('bg_vid');
-		$('#bg_vid').bind('contextmenu', function() 
-		    {
-		        return false;
-		    });
-		video.play();
 
-		video.addEventListener("ended", function() {
-		if (video.ended = 'true') {
-			video.currentTime = 10.03;
-			video.play();
-		}
-		}, false);
+    var video =  document.getElementById('bg_vid');
+    var src;
+    
+    $('#bg_video').bind('contextmenu', function() 
+        {
+            return false;
+        });
+    
+    var userAgent = navigator.userAgent.toLowerCase(); 
+  	$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
 
+  	if($.browser.chrome){
+  	  userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
+  	  userAgent = userAgent.substring(0,userAgent.indexOf('.'));
+  	  $.browser.version = userAgent;
+  	  $.browser.safari = false;
+  		src = '{{ STATIC_URL }}img/bg.webm';
+  	}
+  	
+  	if ($.browser.mozilla) {
+  	  src = '{{ STATIC_URL }}img/bg.webm';
+  	}
+    
+    if ( $.browser.safari ) {
+      src = '{{ STATIC_URL }}img/bg.mp4';      
+    }
+    
+    if ( $.browser.msie ) {
+      src = '{{ STATIC_URL }}img/bg2.swf';
+    }
+    
+    video.src = src;
+    
+    video.play();
+
+    video.addEventListener("ended", function() {
+    if (video.ended = 'true') {
+    	video.currentTime = 10.03;
+    	video.play();
+    }
+    }, false);
 	</script>
 
 
