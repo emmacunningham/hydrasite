@@ -5,9 +5,6 @@ from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.utils import simplejson
 
-
-
-
 def index(request):
 	c = {}
 	c.update(csrf(request))
@@ -20,11 +17,11 @@ def index(request):
 	if request.method == 'POST': 
 		form = NewsletterForm(post) 
 		if post: 
-			firstname = post['name']
+			name = post['name']
 			email = post['email']
 			signup = NewsletterSignup()
 			signup.email = email
-			signup.firstname = firstname
+			signup.name = firstname
 			signup.save()
 			status = simplejson.dumps({'status': "success"})
 			return HttpResponse(status, mimetype="application/json")

@@ -19,7 +19,7 @@ class AboutCopy(models.Model):
 	
 	
 class NewsletterSignup(models.Model):
-	firstname = models.CharField(max_length=250)
+	name = models.CharField(max_length=250)
 	email = models.EmailField(max_length=75)
 	
 class NewsletterForm(ModelForm):

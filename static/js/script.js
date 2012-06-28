@@ -239,7 +239,7 @@ else
 {
 var name = $("#id_firstname").val();
 var email = $("#id_email").val();
-var data = { name:name, email:email, csrfmiddlewaretoken: '{{ csrf_token }}' };
+var data = { name:name, email:email, csrfmiddlewaretoken:csrf };
 var args = { type:"POST", url:"/", data:data };
 var request = $.ajax(args);
 request.done(function(){
