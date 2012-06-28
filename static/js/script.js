@@ -1,3 +1,4 @@
+
 var video = $('#bg_vid').get(0);
 
 video.addEventListener('loadstart',loading,false);		
@@ -31,7 +32,7 @@ $('#bg_video').show(0);
 }
 
 var myLoader = html5Preloader();
-myLoader.addFiles('bg_vid*:/static/img/bg.webm||/static/img/bg.mp4||/static/img/bg2.swf||/static/img/bg_fallback.jpg');
+myLoader.addFiles('bg_vid*:/static/img/bg.webm||/static/img/bg2.mp4||/static/img/bg2.swf||/static/img/bg_fallback.jpg');
 
 var video =  document.getElementById('bg_vid');
 var src;
@@ -49,24 +50,27 @@ if($.browser.chrome){
   userAgent = userAgent.substring(0,userAgent.indexOf('.'));
   $.browser.version = userAgent;
   $.browser.safari = false;
-	src = '{{ STATIC_URL }}img/bg.webm';
+	src = 'static/img/bg.webm';
 }
 
 if ($.browser.mozilla) {
-  src = '{{ STATIC_URL }}img/bg.webm';
+  src = 'static/img/bg.webm';
 }
 
 if ( $.browser.safari ) {
-src = '{{ STATIC_URL }}img/bg.mp4';      
+src = 'static/img/bg2.mp4';      
 }
 
 if ( $.browser.msie ) {
-src = '{{ STATIC_URL }}img/bg2.swf';
+src = 'static/img/bg2.swf';
 }
+
 
 video.src = src;
 
 video.play();
+
+console.log(src);
 
 video.addEventListener("ended", function() {
 if (video.ended = 'true') {
