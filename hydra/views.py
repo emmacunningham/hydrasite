@@ -21,7 +21,7 @@ def index(request):
 			email = post['email']
 			signup = NewsletterSignup()
 			signup.email = email
-			signup.name = firstname
+			signup.name = name
 			signup.save()
 			status = simplejson.dumps({'status': "success"})
 			return HttpResponse(status, mimetype="application/json")
