@@ -146,7 +146,9 @@ video.addEventListener("ended", function() {
   $(function() {
     $('#newsletteractivator,#nnewsletteractivator').click(function(){
       $('#newsletteroverlay').animate({'top':'0px'},0,function(){
-        $('#newsletterbox').animate({'top':'0px'},200);
+        $('#newsletterbox').css('top', '0px');
+        $('#newsletterbox').show(0);
+        console.log('hey!');
         $('#id_firstname').focus();
         $('#newsletterboxclose').show(0);
         $('#newmobileboxclose').show(0);
@@ -158,24 +160,6 @@ video.addEventListener("ended", function() {
         $('#newsletteroverlay').fadeOut(0);
         $('#newsletterboxclose,#newmobileboxclose,#signup').fadeOut(0);
       });
-    });
-    $('#signup').click(function(){
-       $('#newsletterbox').fadeOut(300,function(){
-       $('#newsletteroverlay').fadeOut(0);
-       $('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
-       });			
-       $('#thanksoverlay').fadeIn(400,function(){
-       $('#thanksbox').animate({'top':'0px'},0);
-       $('#thanksclose').animate({'top':'50px'},0);
-       $('#mobilethanksclose').show(0);
-       });
-       $('#thanksclose,#mobilethanksclose').click(function(){
-       $('#thanksbox').animate({'top':'-200%'},0,function(){
-       $('#thanksoverlay').hide(0);
-       $('#thanksclose').hide(0);
-       $('#mobilethanksclose,#signup').hide(0);
-       });
-       });
     });
   });
 
@@ -233,8 +217,6 @@ video.addEventListener("ended", function() {
 
       function validateEmail()
       {      
-        event.preventDefault();
-        
         var x=document.forms["myForm"]["email"].value;
         var atpos=x.indexOf("@");
         var dotpos=x.lastIndexOf(".");
@@ -244,7 +226,7 @@ video.addEventListener("ended", function() {
         if ($('#id_firstname').val() == 'YOUR NAME') {
           $('#id_firstname').css("border-bottom","1px solid red");
           $('#nameerror').show();
-          return false;
+          return false;          
         }
         if (str == '') {
           $('#id_firstname').css("border-bottom","1px solid red");
@@ -255,11 +237,12 @@ video.addEventListener("ended", function() {
         {
           $('#id_email').css("border-bottom","1px solid red");
           $('#emailerror').show();
-          return false;
+          return false          
         }
 
         else
         {
+          event.preventDefault();
           var name = $("#id_firstname").val();
           var email = $("#id_email").val();
 
@@ -269,6 +252,23 @@ video.addEventListener("ended", function() {
           var request = $.ajax(args);
           
           request.done(function(){
-          });
-        }
+            $('#newsletterbox').animate({'top': '-200%'},300,function(){
+             $('#newsletteroverlay').fadeOut(0);
+             $('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
+             });			
+             $('#thanksoverlay').fadeIn(400,function(){
+             $('#thanksbox').animate({'top':'0px'},0);
+             $('#thanksclose').css('top', '50px');
+             $('#thanksclose').show(0);
+             $('#mobilethanksclose').show(0);
+             });
+             $('#thanksclose,#mobilethanksclose').click(function(){
+             $('#thanksbox').animate({'top':'-200%'},0,function(){
+             $('#thanksoverlay').hide(0);
+             $('#thanksclose').hide(0);
+             $('#mobilethanksclose,#signup').hide(0);
+             });
+             });
+        });
       }
+    }
