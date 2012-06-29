@@ -1,6 +1,21 @@
+//Video launching
+
+var userAgent = navigator.userAgent.toLowerCase(); 
+$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
+
+// Is this a version of Chrome?
+if($.browser.chrome){
+userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
+userAgent = userAgent.substring(0,userAgent.indexOf('.'));
+$.browser.version = userAgent;
+$.browser.safari = false;
+$(window).resize(function() {
+	$('#bg_video').hide(0);
+	$('#bg_video').show(0);
+});
+}
 
 var video = $('#bg_vid').get(0);
-
 video.addEventListener('loadstart',loading,false);		
 video.addEventListener('canplaythrough',loaded,false);		
 
@@ -16,20 +31,7 @@ function loaded(e) {
 }
 
 
-var userAgent = navigator.userAgent.toLowerCase(); 
-$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
 
-// Is this a version of Chrome?
-if($.browser.chrome){
-userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
-userAgent = userAgent.substring(0,userAgent.indexOf('.'));
-$.browser.version = userAgent;
-$.browser.safari = false;
-$(window).resize(function() {
-$('#bg_video').hide(0);
-$('#bg_video').show(0);
-});
-}
 
 var myLoader = html5Preloader();
 myLoader.addFiles('bg_vid*:/static/img/bg.webm||/static/img/bg2.mp4||/static/img/bg2.swf||/static/img/bg_fallback.jpg');
@@ -70,13 +72,11 @@ video.src = src;
 
 video.play();
 
-console.log(src);
-
 video.addEventListener("ended", function() {
-if (video.ended = 'true') {
-video.currentTime = 10.03;
-video.play();
-}
+	if (video.ended = 'true') {
+		video.currentTime = 10.03;
+		video.play();
+	}
 }, false);
 
 $(function() {

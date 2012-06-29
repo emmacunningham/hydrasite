@@ -101,6 +101,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'hydra.middleware.PrettifyMiddleware.PrettifyMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -161,3 +162,9 @@ LOGGING = {
         },
     }
 }
+
+COMPRESS_ENABLED = True
+COMPRESS_URL = STATIC_URL
+COMPRESS_ROOT = STATIC_ROOT
+COMPRESS = True
+COMPRESS_CACHE_BACKEND = 'default'
