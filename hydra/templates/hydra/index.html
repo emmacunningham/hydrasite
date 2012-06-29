@@ -49,12 +49,10 @@
 				<div class="headercol">
 				  <div class="verticalline">
 				    <a class="aboutactivator" id="aboutactivator">
-				      <div>
-				        <p class="topnav">
-				        <strong>ABOUT US/</strong><br />
-				        WHAT WE DO
-				        </p>
-				      </div>
+			        <p class="topnav">
+			        <strong>ABOUT US/</strong><br />
+			        WHAT WE DO
+			        </p>
 				    </a>
 				  </div>
 				</div>
@@ -72,31 +70,15 @@
 			</div>
 		</div>
 	</header>
-
-
 	<!-- html5 background video -->
 	<div id="bg_video">
     <video id="bg_vid" autoplay="false">
-      
-
-
-    	
     </video>
-
 	</div>
-
-
-
-
 	<div role="main">
-
-		<div id="spinner" class="spinner" style="display:none;">
-		
-		    <img id="img-spinner" src="{{ STATIC_URL }}img/loader.gif" alt="Loading"/>
-		
+		<div id="spinner" class="spinner" style="display:none;">		
+	    <img id="img-spinner" src="{{ STATIC_URL }}img/loader.gif" alt="Loading"/>		
 		</div>
-		
-		
 		<!-- about overlay -->
 		<div class="aboutoverlay" id="aboutoverlay" style="display:none;">
 			<div class="container">
@@ -105,8 +87,7 @@
 					</div>
 					<div class="boxcol">
 						<a class="boxclose" id="boxclose" style="align:right;"></a>
-					</div>
-					
+					</div>					
 				</div>
 			</div>
 		</div>
@@ -119,35 +100,32 @@
 			<div class="aboutsinglecol">
 				{{ aboutleft }}  {{ aboutright }}
 			</div>
-
 			<!-- twocol about -->
 			<div class="container">
 				<div class="row">
 					<div class="abouttext">
-					<div class="fourcol" style="margin-right:10px;">
-						{{ aboutleft|linebreaksbr }}
-					</div>
-					<div class="fourcol" style="margin-left:10px;">
-						{{ aboutright|linebreaksbr }}
-					</div>
+  					<div class="fourcol" style="margin-right:10px;">
+  						{{ aboutleft|linebreaksbr }}
+  					</div>
+  					<div class="fourcol" style="margin-left:10px;">
+  						{{ aboutright|linebreaksbr }}
+  					</div>
 					</div>
 				</div>
 			</div> 
 		</div>
-
-
 		<!-- newsletter overlay -->
 		<div class="newsletteroverlay" id="newsletteroverlay" style="display:none;">
 		</div>
 		<div class="newsletterbox" id="newsletterbox">
 			<div class="container" id="newsletterwide">
 				<div class="row">
-				<div class="fivecol" style="text-align:left;">
-					<div id="mobileonlyhacks">
-						<br /><br /><br />
-					</div>
-				<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
-				</div>
+  				<div class="fivecol" style="text-align:left;">
+  					<div id="mobileonlyhacks">
+  						<br /><br /><br />
+  					</div>
+  				<p class="topnav"><strong>NEWSLETTER/</strong> SIGN UP FOR UPDATES</p>
+				  </div>
 				</div>
 				<div id="mobileonlyhacks">
 					<br /><br /><br />
@@ -184,52 +162,84 @@
 				</div>
 			</div>
 		</div>	
-		
-
 		<!-- thanks overlay -->
-			<div class="thanksoverlay" id="thanksoverlay" style="display:none;">
-			</div>
-			<div class="thanksbox" id="thanksbox">
-				<div class="container">
-					<div class="row" id="thanksrow">
-						<div class="thankscol">
-							<p class="topnav" style="font-size:.5em;">Thanks for signing up!</p>
-						</div>
-						<div class="thankscol">
-							<a class="thanksclose" id="thanksclose"></a>
-							<a class="mobilethanksclose" id="mobilethanksclose" style="align:right;display:none;"></a>
-						</div>
+		<div class="thanksoverlay" id="thanksoverlay" style="display:none;">
+		</div>
+		<div class="thanksbox" id="thanksbox">
+			<div class="container">
+				<div class="row" id="thanksrow">
+					<div class="thankscol">
+						<p class="topnav" style="font-size:.5em;">Thanks for signing up!</p>
+					</div>
+					<div class="thankscol">
+						<a class="thanksclose" id="thanksclose"></a>
+						<a class="mobilethanksclose" id="mobilethanksclose" style="align:right;display:none;"></a>
 					</div>
 				</div>
 			</div>
+		</div>
 	
  		<!-- main singlecol -->
 			<div class="singlecol" id="logo">
 				<img src="{{ STATIC_URL }}img/logo.png">
 			</div>
 			<div id="mobilemain">
-			<div class="singlecol"><div class="verticalline"><a class="aboutactivator" id="aaboutactivator"><p class="topnav"><strong>ABOUT US/</strong><br />WHAT WE DO</p></a></div></div>
-			<div class="singlecol"><div class="verticalline"><a class="newsletteractivator" id="nnewsletteractivator"><p class="topnav"><strong>NEWSLETTER/</strong><br />SIGN UP</p></a></div></div>
-
-			<div class="singlecol"><div class="verticalline" style="border-top:thin solid #484848;"><p class="topnav"><strong>EMAIL</strong><br /><a href="mailto:info@hydra-entertainment.com">INFO@HYDRA-ENTERTAINMENT.COM</a></p></div></div>
-			<div class="singlecol"><div class="verticalline" style="border-bottom:none;padding-top:0;"><p class="topnav"><strong>PHONE</strong><br />323.931.6633</p></div></div>
+  			<div class="singlecol">
+  			  <div class="verticalline">
+  			    <a class="aboutactivator" id="aaboutactivator">
+  			      <p class="topnav">
+  			        <strong>ABOUT US/</strong><br />
+  			        WHAT WE DO
+  			      </p>
+  			    </a>
+  			  </div>
+  			</div>
+  			<div class="singlecol">
+  			  <div class="verticalline">
+  			    <a class="newsletteractivator" id="nnewsletteractivator">
+  			      <p class="topnav"><strong>NEWSLETTER/</strong><br />
+  			        SIGN UP
+  			      </p>
+  			    </a>
+  			  </div>
+  			</div>
+  			<div class="singlecol">
+  			  <div class="verticalline" style="border-top:thin solid #484848;">
+  			    <p class="topnav"><strong>EMAIL</strong><br />
+  			      <a href="mailto:info@hydra-entertainment.com">INFO@HYDRA-ENTERTAINMENT.COM</a>
+  			    </p>
+  			  </div>
+  			</div>
+  			<div class="singlecol">
+  			  <div class="verticalline" style="border-bottom:none;padding-top:0;">
+  			    <p class="topnav">
+  			      <strong>PHONE</strong><br />
+  			      323.931.6633
+  			    </p>
+  			  </div>
+  			</div>
 			
-			<div style="margin-left:0;margin-right:0;margin-bottom:0;padding-top:2px;width:100%;background:#000000;position:fixed;left:0;bottom:0;height:20px;"><div class="verticalline" style="border-bottom:none;color:#ffffff;font-size:.5em;"><p class="topnav"><img class="hydra" src="{{ STATIC_URL }}img/hydrawhite.png"></p></div></div>
-			</div>
-			</div>
-
-		
-	</div>
+  			<div style="margin-left:0;margin-right:0;margin-bottom:0;padding-top:2px;width:100%;background:#000000;position:fixed;left:0;bottom:0;height:20px;">
+  			  <div class="verticalline" style="border-bottom:none;color:#ffffff;font-size:.5em;">
+  			    <p class="topnav"><img class="hydra" src="{{ STATIC_URL }}img/hydrawhite.png"></p>
+  			  </div>
+  			</div>
+		  </div>
+	  </div>
+  </div>
 
 
 	<footer id="footer">
 		<div class="container">
 			<div class="row">
 				<div class="sevencol">
-					<p class="darkgrey" id="footertext"><img class="hydra" src="{{ STATIC_URL }}img/hydrawhite.png"></p>
+					<p class="darkgrey" id="footertext">
+					  <img class="hydra" src="{{ STATIC_URL }}img/hydrawhite.png">
+					</p>
 				</div>
 				<div class="twocol" id="footercontact" style="text-align:left;">
-					<p class="footerverticalline" id="footertext">EMAIL<br /><strong class="lightgrey"><a href="mailto:info@hydra-entertainment.com">INFO@HYDRA-ENTERTAINMENT.COM</a></strong>
+					<p class="footerverticalline" id="footertext">EMAIL<br />
+					  <strong class="lightgrey"><a href="mailto:info@hydra-entertainment.com">INFO@HYDRA-ENTERTAINMENT.COM</a></strong>
 					</p>
 				</div>
 				<div class="onecol" id="footerphonecontact">

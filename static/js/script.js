@@ -145,7 +145,6 @@ video.addEventListener("ended", function() {
 
   $(function() {
     $('#newsletteractivator,#nnewsletteractivator').click(function(){
-      console.log('hi');
       $('#newsletteroverlay').animate({'top':'0px'},0,function(){
         $('#newsletterbox').animate({'top':'0px'},200);
         $('#id_firstname').focus();
@@ -268,6 +267,6 @@ video.addEventListener("ended", function() {
           });
           });
           });
-          event.stopImmediatPropagation();
+          event.stopImmediatePropagation();
         }
       }
