@@ -159,7 +159,24 @@ video.addEventListener("ended", function() {
         $('#newsletterboxclose,#newmobileboxclose,#signup').fadeOut(0);
       });
     });
-
+    $('#signup').click(function(){
+       $('#newsletterbox').fadeOut(300,function(){
+       $('#newsletteroverlay').fadeOut(0);
+       $('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
+       });			
+       $('#thanksoverlay').fadeIn(400,function(){
+       $('#thanksbox').animate({'top':'0px'},0);
+       $('#thanksclose').animate({'top':'50px'},0);
+       $('#mobilethanksclose').show(0);
+       });
+       $('#thanksclose,#mobilethanksclose').click(function(){
+       $('#thanksbox').animate({'top':'-200%'},0,function(){
+       $('#thanksoverlay').hide(0);
+       $('#thanksclose').hide(0);
+       $('#mobilethanksclose,#signup').hide(0);
+       });
+       });
+    });
   });
 
   $(function() {
@@ -215,7 +232,9 @@ video.addEventListener("ended", function() {
 
 
       function validateEmail()
-      {        
+      {      
+        event.preventDefault();
+        
         var x=document.forms["myForm"]["email"].value;
         var atpos=x.indexOf("@");
         var dotpos=x.lastIndexOf(".");
@@ -250,23 +269,6 @@ video.addEventListener("ended", function() {
           var request = $.ajax(args);
           
           request.done(function(){
-          $('#newsletterbox').fadeOut(300,function(){
-          $('#newsletteroverlay').fadeOut(0);
-          $('#newsletterboxclose,#newmobileboxclose').fadeOut(0);
-          });			
-          $('#thanksoverlay').fadeIn(400,function(){
-          $('#thanksbox').animate({'top':'0px'},0);
-          $('#thanksclose').animate({'top':'50px'},0);
-          $('#mobilethanksclose').show(0);
           });
-          $('#thanksclose,#mobilethanksclose').click(function(){
-          $('#thanksbox').animate({'top':'-200%'},0,function(){
-          $('#thanksoverlay').hide(0);
-          $('#thanksclose').hide(0);
-          $('#mobilethanksclose,#signup').hide(0);
-          });
-          });
-          });
-          event.stopImmediatePropagation();
         }
       }
