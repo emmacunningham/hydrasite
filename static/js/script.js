@@ -15,7 +15,7 @@ if($.browser.chrome){
   });
 }
 
-//if (!$.browser.msie) {
+if (!$.browser.msie || navigator.userAgent.indexOf("Trident/5")>-1) {
 var video = $('#bg_vid').get(0);
 video.addEventListener('loadstart',loading,false);		
 video.addEventListener('canplaythrough',loaded,false);		
@@ -30,7 +30,7 @@ function loaded(e) {
   if(!e) { e = window.event; }
   $('#spinner').hide();
 }
-//}
+}
 
 
 
@@ -88,8 +88,10 @@ if ( $.browser.msie ) {
       }, false);
   }
   else {
-    $('video').attr('src', 'static/img/bg2.swf' ).attr('type','application/x-shockwave-flash');
-    video.play();
+    //$('video').attr('src', 'static/img/bg2.swf' ).attr('type','application/x-shockwave-flash');
+    //video.play();
+    console.log("hi");
+    $('#bg_vid').append('<embed src="static/img/bg2.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>');
   }
 }
 
