@@ -15,7 +15,7 @@ if($.browser.chrome){
   });
 }
 
-if (!$.browser.msie) {
+//if (!$.browser.msie) {
 var video = $('#bg_vid').get(0);
 video.addEventListener('loadstart',loading,false);		
 video.addEventListener('canplaythrough',loaded,false);		
@@ -30,7 +30,7 @@ function loaded(e) {
   if(!e) { e = window.event; }
   $('#spinner').hide();
 }
-}
+//}
 
 
 
@@ -78,11 +78,22 @@ if(!$.browser.msie) {
 }  
 
 if ( $.browser.msie ) {
-  console.log('hi');
-   $('video').attr('src', 'static/img/bg2.mp4' ).attr('type','video/mp4');
-   video.play();
-  //src = 'static/img/bg2.swf';
+  if(navigator.userAgent.indexOf("Trident/5")>-1) {
+    $('video').attr('src', 'static/img/bg2.mp4' ).attr('type','video/mp4');
+    video.addEventListener("ended", function() {
+      if (video.ended = 'true') {
+        video.currentTime = 10.03;
+        video.play();
+      }
+      }, false);
+  }
+  else {
+    $('video').attr('src', 'static/img/bg2.swf' ).attr('type','application/x-shockwave-flash');
+    video.play();
+  }
 }
+
+
 
 $(function() {
   $('#aboutactivator').click(function(){
