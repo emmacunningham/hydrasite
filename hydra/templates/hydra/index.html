@@ -73,6 +73,12 @@
 	<!-- html5 background video -->
 	<div id="bg_video">
     <video id="bg_vid" autoplay="false">
+      <!-- if IE -->
+      <embed id="flashfallback" src="{{ STATIC_URL }}img/bg2.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>  				
+
+      <!-- everybody else -->  
+  		<img id="fallback" src="{{ STATIC_URL }}img/bg_fallback.jpg" style="height:100%;z-index:-5;">
+  		
     </video>
 	</div>
 	<div role="main">

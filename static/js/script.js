@@ -90,8 +90,8 @@ if ( $.browser.msie ) {
   else {
     //$('video').attr('src', 'static/img/bg2.swf' ).attr('type','application/x-shockwave-flash');
     //video.play();
-    console.log("hi");
-    $('#bg_vid').append('<embed src="static/img/bg2.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>');
+    //console.log("hi");
+    //$('#bg_vid').append('<embed id="flashfallback" src="{{ STATIC_URL }}img/bg2.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>');
   }
 }
 
