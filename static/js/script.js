@@ -15,6 +15,33 @@ if($.browser.chrome){
   });
 }
 
+$(window).load(function() {    
+
+	var theWindow        = $(window),
+	    $bg              = $("#bg_vid"),
+	    aspectRatio      = $bg.width() / $bg.height();
+	
+
+	function resizeBg() {
+		
+		if ( ((theWindow.width() / theWindow.height()) < aspectRatio) && theWindow.width() < theWindow.height()) {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgheight');
+		} else {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgwidth');
+		}
+					
+	}
+	                   			
+	theWindow.resize(function() {
+		resizeBg();
+	}).trigger("resize");
+
+});
+
 
 var video = $('#bg_vid').get(0);
 video.addEventListener('loadstart',loading,false);		

@@ -106,7 +106,7 @@ img {
 	.footerverticalline {
 	padding-left:5px;
 	}
-
+	
 	#footercontact {
 	display:inline;
 	position:relative;
@@ -126,24 +126,25 @@ img {
 	font-size:4em;
 	}
 
-
 	.row .sevencol {
   width: 40%;
 	}
 
-
 }
 
+@media only screen and (max-width: 900px) {
+  .bgheight { 
+    left: -15% !important;
+  }
+}
 
-@media only screen and (max-width: 640px) {
-	
+@media only screen and (max-width: 740px) {
 	.row {
 	width: 100%;
 	margin: 10px;
 	overflow: hidden;
 	}
-	
-	
+
 	body {
 	font-size: 1em;
 	background: transparent url(../img/bg_fallback.jpg) no-repeat center center fixed;
@@ -178,7 +179,7 @@ img {
 	}
 	
 	#bg_video {
-	display:none;
+	display:none !important;
 	}
 	
 	#bg_video_safari {

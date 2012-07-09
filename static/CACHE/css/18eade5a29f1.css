@@ -226,7 +226,7 @@ td { vertical-align: top; }
 
 
 .aboutoverlay{
- 	background:transparent url(../img/overlay_small.png) repeat top left;
+ 	background:transparent url('/static/img/overlay_small.png?819d4230e9fc') repeat top left;
     position:fixed;
     top:0px;
     bottom:0px;
@@ -274,7 +274,7 @@ a.boxclose{
 	padding-top:50px;
     width:100px;
     height:100px;
-    background:transparent url(../img/close.png) no-repeat top right;
+    background:transparent url('/static/img/close.png?538ab6d85680') no-repeat top right;
     cursor:pointer;
     z-index:102;
 	margin-top:40px;
@@ -347,7 +347,7 @@ a.newsletterboxclose{
 	margin-top:30px;
     width:100px;
     height:100px;
-    background:transparent url(../img/close.png) no-repeat top right;
+    background:transparent url('/static/img/close.png?538ab6d85680') no-repeat top right;
     cursor:pointer;
 	display:inline-block;
 	/* For IE 7 */
@@ -362,7 +362,7 @@ a.newsletterboxclose{
    	bottom:0px;
    	width:100%;
 	height:70px;
- 	background: transparent url('../img/greyfooter.png') repeat top right;
+ 	background: transparent url('/static/img/greyfooter.png?a876a6fc9dba') repeat top right;
 	text-align:left;
 	color:#ffffff;
 	margin-right:0px;
@@ -434,7 +434,7 @@ p.topnav {
 	width:80px;
 	height:80px;
 	border:none;
-	background: transparent url(../img/signup.png) no-repeat center;
+	background: transparent url('/static/img/signup.png?f0c87ad57fef') no-repeat center;
 	display:inline-block;
 	color:#FFFFFF;
 	margin-left:0px;
@@ -479,7 +479,7 @@ a.thanksclose {
 	margin-right:50px;
     width:100px;
     height:100px;
-    background:transparent url(../img/close.png) no-repeat top right;
+    background:transparent url('/static/img/close.png?538ab6d85680') no-repeat top right;
     cursor:pointer;
 	display:inline-block;
 	/* For IE 7 */
@@ -545,8 +545,12 @@ input.signupinput {
 	min-height:50%;
 }
 
+.bgwidth { 
+}
+
 .bgheight { 
-  left: -10% !important;
+  height: 100%;
+  max-width: 150%;
 }
 
 
