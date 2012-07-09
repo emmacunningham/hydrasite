@@ -15,6 +15,7 @@ if($.browser.chrome){
   });
 }
 
+if (!$.browser.msie) {
 var video = $('#bg_vid').get(0);
 video.addEventListener('loadstart',loading,false);		
 video.addEventListener('canplaythrough',loaded,false);		
@@ -29,7 +30,7 @@ function loaded(e) {
   if(!e) { e = window.event; }
   $('#spinner').hide();
 }
-
+}
 
 
 
