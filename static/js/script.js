@@ -42,7 +42,7 @@ $(window).load(function() {
 
 });
 
-
+// Listen for video loading.
 var video = $('#bg_vid').get(0);
 video.addEventListener('loadstart',loading,false);		
 video.addEventListener('canplaythrough',loaded,false);		
@@ -57,9 +57,6 @@ function loaded(e) {
   if(!e) { e = window.event; }
   $('#spinner').hide();
 }
-
-
-
 
 var myLoader = html5Preloader();
 myLoader.addFiles('bg_vid*:/static/img/bg.webm||/static/img/bg2.mp4||/static/img/bg2.swf||/static/img/bg_fallback.jpg');
@@ -119,6 +116,7 @@ if ( $.browser.msie ) {
 // On logo click, restart video
 
 $('#logo').click(function(){
+  
   if(!$.browser.msie) {
 
     if($.browser.chrome){
