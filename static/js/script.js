@@ -116,6 +116,51 @@ if ( $.browser.msie ) {
   }
 }
 
+// On logo click, restart video
+
+$('#logo').click(function(){
+  if(!$.browser.msie) {
+
+    if($.browser.chrome){
+      userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
+      userAgent = userAgent.substring(0,userAgent.indexOf('.'));
+      $.browser.version = userAgent;
+      $.browser.safari = false;
+      src = 'static/img/bg.webm';
+    }
+
+    if ($.browser.mozilla) {
+      src = 'static/img/bg.webm';
+    }
+
+    if ( $.browser.safari ) {
+      src = 'static/img/bg2.mp4';      
+    }
+    video.src = src;
+
+    video.play();
+
+    video.addEventListener("ended", function() {
+      if (video.ended = 'true') {
+        video.currentTime = 10.03;
+        video.play();
+      }
+      }, false);
+  }  
+
+  if ( $.browser.msie ) {
+    if(navigator.userAgent.indexOf("Trident/5")>-1) {
+      $('video').attr('src', 'static/img/bg2.mp4' ).attr('type','video/mp4');
+      video.addEventListener("ended", function() {
+        if (video.ended = 'true') {
+          video.currentTime = 10.03;
+          video.play();
+        }
+        }, false);
+    }
+  }
+});
+
 
 
 $(function() {
