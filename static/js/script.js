@@ -79,14 +79,17 @@ if(!$.browser.msie) {
     userAgent = userAgent.substring(0,userAgent.indexOf('.'));
     $.browser.version = userAgent;
     $.browser.safari = false;
+    $('video').attr('type','video/webm');
     src = 'static/img/bg.webm';
   }
 
   if ($.browser.mozilla) {
+    $('video').attr('type','video/webm');
     src = 'static/img/bg.webm';
   }
 
   if ( $.browser.safari ) {
+    $('video').attr('type','video/mp4');
     src = 'static/img/bg2.mp4';      
   }
   video.src = src;
@@ -116,18 +119,20 @@ if ( $.browser.msie ) {
 // On logo click, restart video
 
 $('#logo').click(function(){
-  
-  if(!$.browser.msie) {
 
+
+  if(!$.browser.msie) {
     if($.browser.chrome){
+      
       userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
       userAgent = userAgent.substring(0,userAgent.indexOf('.'));
       $.browser.version = userAgent;
       $.browser.safari = false;
-      src = 'static/img/bg.webm';
     }
 
     if ($.browser.mozilla) {
+      $('video').attr('type','video/webm');
+
       src = 'static/img/bg.webm';
     }
 
@@ -135,6 +140,7 @@ $('#logo').click(function(){
       src = 'static/img/bg2.mp4';      
     }
     video.src = src;
+
 
     video.play();
 
@@ -147,6 +153,9 @@ $('#logo').click(function(){
   }  
 
   if ( $.browser.msie ) {
+    video.currentTime = 0.00;
+    video.play();
+    /*
     if(navigator.userAgent.indexOf("Trident/5")>-1) {
       $('video').attr('src', 'static/img/bg2.mp4' ).attr('type','video/mp4');
       video.addEventListener("ended", function() {
@@ -155,7 +164,7 @@ $('#logo').click(function(){
           video.play();
         }
         }, false);
-    }
+    }*/
   }
 });
 
