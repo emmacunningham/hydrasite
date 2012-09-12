@@ -44,8 +44,19 @@ $(window).load(function() {
 
 // Listen for video loading.
 var video = $('#bg_vid').get(0);
-video.addEventListener('loadstart',loading,false);		
-video.addEventListener('canplaythrough',loaded,false);		
+if ( $.browser.msie ) {
+  if(navigator.userAgent.indexOf("Trident/5")>-1) {
+    video.addEventListener('loadstart',loading,false);		
+    video.addEventListener('canplaythrough',loaded,false);		
+  }
+  else {
+    
+  }
+} else {
+  video.addEventListener('loadstart',loading,false);		
+  video.addEventListener('canplaythrough',loaded,false);	  
+}
+
 
 function loading(e) {
   if(!e) { e = window.event; }
