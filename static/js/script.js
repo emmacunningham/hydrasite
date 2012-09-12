@@ -130,7 +130,7 @@ if ( $.browser.msie ) {
 // On logo click, restart video
 
 $('#logo').click(function(){
-
+  $('#fallback').hide();
 
   if(!$.browser.msie) {
     if($.browser.chrome){
